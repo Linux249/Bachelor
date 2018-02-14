@@ -12,6 +12,7 @@
 - Welche Informationen (Meta) gibt es zu den Bilder? (z.B. Geo-cords) 
 - Wie lässt sich ein 3D raum darstellen bzw. auf 2D mappen 
 - sind die Bilder unterschiedlich groß?
+- Veröffentlichen von Artikeln auf Medium? 
 
 # Aufgabe
 - Framework für 3d Raum suchen
@@ -35,14 +36,14 @@
 - left/right/top/bottom move
 
 ## links
-Zooming stage relative to pointer position - https://konvajs.github.io/docs/sandbox/Zooming_Relative_To_Pointer.html
-Interactive (Tooltip, D&D)  Scatter Plot with 20,000 Nodes https://konvajs.github.io/docs/sandbox/20000_Nodes.html
-Elastic Stars https://konvajs.github.io/docs/sandbox/Elastic_Stars.html
-D&D + Hover https://konvajs.github.io/docs/sandbox/Expand_Images_on_Hover.html
+- Zooming stage relative to pointer position - https://konvajs.github.io/docs/sandbox/Zooming_Relative_To_Pointer.html
+- Interactive (Tooltip, D&D)  Scatter Plot with 20,000 Nodes https://konvajs.github.io/docs/sandbox/20000_Nodes.html
+- Elastic Stars https://konvajs.github.io/docs/sandbox/Elastic_Stars.html
+- D&D + Hover https://konvajs.github.io/docs/sandbox/Expand_Images_on_Hover.html
 
 
 # Anfoderungen aus der Besprechung
-- 3D Betrachtung von Bilder 
+- Betrachtung von Bilder im Raum(3D)/Orbit
 - interaktive Bewegung
 - makieren von Bilder
 - Gruppieren von Bilder mit Labels/zu klassen
