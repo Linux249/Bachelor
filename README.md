@@ -1,4 +1,17 @@
 # Bachelor
+
+
+Aktuelles vorgehen: Stand 22.02
+Prototypen Erstellen:
+- Objekte sind/werden Bilder
+- Objekte via D&D bewegen
+- Gruppierung ermöglichen + Gruppen D&D
+- MetaInfos zu Objekte anzeigen
+- Gruppen anzeigen + ausblenden
+- Bewegung anderer knoten mit hilfe eines FDG beschreiben: http://www.puzzlr.org/basics-of-d3-force-directed-graphs/
+
+@K: Bewegung anderer Objekte der Gruppe klar aber FDG sinnvoll? 
+
 ## vorgehen: 
 - paper 1 lesen
 - prototypen bauen
