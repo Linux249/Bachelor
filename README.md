@@ -12,6 +12,12 @@ Prototypen Erstellen:
 
 @K: Bewegung anderer Objekte der Gruppe klar aber FDG sinnvoll? 
 
+FDG links
+- Tutorial auf D3 v3: https://bl.ocks.org/sathomas
+
+## Ideen
+- der FDG kennt verschiedene force methoden - diese könnte man alle analysieren
+
 ## vorgehen: 
 - paper 1 lesen
 - prototypen bauen
