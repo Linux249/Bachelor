@@ -1,41 +1,44 @@
 import * as d3 from 'd3'
+import graph from '../mock/graph'
 
-function component() {
-    let element = document.createElement('div');
-
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = "hello Julian";
-
-    return element;
-}
+console.log(graph)
+// draggen im raster: https://jsfiddle.net/6g9howo7/11/
 
 
 
-document.body.appendChild(component());
+let nodes_data = graph.nodes.map(node => {
+    console.log(node.y)
+    //node.fx = node.x*50 + 700
+    node.x = node.x*50 + 700 // 20fache
+    node.xx = node.x*50 + 700 // 20fache
+    //node.fy = node.y*20 + 300  // 20fache
+    node.y = node.y*20 + 300  // 20fache
+    node.yy = node.y*20 + 300  // 20fache
+    return node
+})
 
+    const xx = [
+    {"id": 0, "label": "A", y: 200, x: 200},
+    {"id": 1, "label": "A", y: 400, x: 200},
+    {"id": 2, "label": "A", y: 300, x: 400},
 
+    {"id": 3, "label": "B", y: 100, x: 600},
+    {"id": 4, "label": "B", y: 500, x: 600},
 
-let nodes_data =  [
-    {"id": 0, "label": "A", fy: 200, fx: 200},
-    {"id": 1, "label": "A", fy: 400, fx: 200},
-    {"id": 2, "label": "A", fy: 300, fx: 400},
-    
-    {"id": 3, "label": "B", fy: 100, fx: 600},
-    {"id": 4, "label": "B", fy: 500, fx: 600},
-
-    {"id": 5, "label": "C", fy: 300, fx: 800},
-    {"id": 6, "label": "C", fy: 200, fx: 1000},
-    {"id": 7, "label": "C", fy: 400, fx: 1000}
+    {"id": 5, "label": "C", y: 300, x: 800},
+    {"id": 6, "label": "C", y: 200, x: 1000},
+    {"id": 7, "label": "C", y: 400, x: 1000}
 ]
 
 nodes_data = nodes_data.map(node => {
-    node.x = node.fx
-    node.y = node.fy
+    ////node.fy = node.f
     return node
 })
 
 //Create links data
-let links_data = [
+let links_data = graph.links
+
+    const yy =  [
     {"source": 0, "target": 1, id: 1},
     {"source": 1, "target": 2, id: 2},
     {"source": 2, "target": 0, id: 3},
@@ -127,6 +130,20 @@ let svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
+//add zoom capabilities
+var zoom_handler = d3.zoom()
+    .on("zoom", zoom_actions);
+
+zoom_handler(svg);
+
+function zoom_actions(){
+    g.attr("transform", d3.event.transform)
+}
+
+//add encompassing group for the zoom
+var g = svg.append("g")
+    .attr("class", "everything");
+
 //set up the simulation
 //nodes only for now
 let simulation = d3.forceSimulation()
@@ -136,20 +153,29 @@ let simulation = d3.forceSimulation()
 //we're going to add a charge to each node
 //also going to add a centering force
 simulation
-    //.force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
-    //.force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
+.force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
+.force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
 
 
 //Create the link force
 //We need the id accessor to use named sources and targets
 let link_force =  d3.forceLink(links_data)
-    .id(function(d) { return d.id; }) // link.id braucht funktion um id attribut von nodes zu wissen
+    //.id(function(d) { return d.id; }) // link.id braucht funktion um id attribut von nodes zu wissen
     //.distance(50)   // default 30 - length of the links
-    //.strength(0)
+    .strength(1)
 
-simulation.force("links",link_force)
+//simulation.force("links",link_force)
 
-
+function splitting_force() {
+    for (var i = 0, n = nodes_data.length; i < n; ++i) {
+        curr_node = nodes_data[i];
+        curr_node.x = curr_node.xx
+        curr_node.y = curr_node.yy
+        // do things here to change the position and velocity of curr_node
+        // position is curr_node.x, curr_node.y
+        // velocity is curr_node.vx, curr_node.vy
+    }
+}
 //Function to choose what color circle we have
 //Let's return blue for males and red for females
 function circleColour(d){
@@ -164,15 +190,19 @@ function circleColour(d){
 }
 
 //draw circles for the nodes
-let node = svg.append("g")
+let node = g
+    .append("g")
     .attr("class", "nodes")
     .selectAll("circle")
     .data(nodes_data)
     .enter()
     .append("circle")
     .attr("r", 15)
-    .attr("fill", circleColour);
+    .attr("fill", circleColour)
+//.append
 
+
+//node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 // TODO warum nicht 'node' der funktion übergeben + return?
 // The complete tickActions function
 function tickActions() {
@@ -208,7 +238,8 @@ function linkColour(d){
     }
 }
 //draw lines for the links
-let link = svg.append("g")
+let link = g
+    .append("g")
     .attr("class", "links")
     .selectAll("line")
     .data(links_data)
@@ -236,14 +267,16 @@ function drag_start(d) {
 }
 
 function drag_drag(d) {
+    //console.log(`${d.x}:${d.y}`)
+    //console.log(`${d.fx}:${d.fy}`)
     d.fx = d3.event.x;
     d.fy = d3.event.y;
 }
 
 function drag_end(d) {
     if (!d3.event.active) simulation.alphaTarget(0);
-    //d.fx = null;
-    //d.fy = null;
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
 }
 
 let drag_handler = d3.drag()
