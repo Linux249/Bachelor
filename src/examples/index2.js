@@ -5,19 +5,26 @@ console.log(graph)
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/
 
 
+let width = window.innerWidth
+let height = window.innerHeight
 
-let nodes_data = graph.nodes.map(node => {
-    console.log(node.y)
+let svg = d3.select('svg')
+svg.attr('width', width).attr('height', height)
+
+let nodes = graph.nodes.map(node => {
+    //console.log(node)
     //node.fx = node.x*50 + 700
-    node.x = node.x*50 + 700 // 20fache
-    node.xx = node.x*50 + 700 // 20fache
+    //node.x = node.x*50 + 700 // 20fache
+
+    node.fx = node.x*width/25 + width/2 // 20fache
+    node.fy = node.y*height/25 + height/2  // 20fache
+
+    //node.y = node.y*20 + 300  // 20fache
     //node.fy = node.y*20 + 300  // 20fache
-    node.y = node.y*20 + 300  // 20fache
-    node.yy = node.y*20 + 300  // 20fache
     return node
 })
 
-    const xx = [
+    /*const xx = [
     {"id": 0, "label": "A", y: 200, x: 200},
     {"id": 1, "label": "A", y: 400, x: 200},
     {"id": 2, "label": "A", y: 300, x: 400},
@@ -28,16 +35,31 @@ let nodes_data = graph.nodes.map(node => {
     {"id": 5, "label": "C", y: 300, x: 800},
     {"id": 6, "label": "C", y: 200, x: 1000},
     {"id": 7, "label": "C", y: 400, x: 1000}
-]
+]*/
 
-nodes_data = nodes_data.map(node => {
-    ////node.fy = node.f
+nodes = nodes.map(node => {
+    //node.fy = node.f
     return node
 })
 
 //Create links data
-let links_data = graph.links
+let links = graph.links
 
+console.log(links)
+/*
+.map(link => {
+    console.log(link)
+        const li = {
+            index: link.index,
+            source: link.source.index,
+            target: link.target.index
+        }
+        console.log(li)
+        return li
+    }
+)
+ */
+/*
     const yy =  [
     {"source": 0, "target": 1, id: 1},
     {"source": 1, "target": 2, id: 2},
@@ -51,11 +73,11 @@ let links_data = graph.links
     {"source": 5, "target": 6, id: 8},
     {"source": 7, "target": 5, id: 9},
     {"source": 6, "target": 7, id: 10}
-]
+]*/
 
 //Characters
 // sex is for different node colors
-/*nodes_data =  [
+/*nodes =  [
     {"name": "Lillian", "sex": "F", fx: 100, fy: 100},
     {"name": "Gordon", "sex": "M", fx: 150, fy: 150},
     {"name": "Sylvester", "sex": "M", fx: 200, fy: 200},
@@ -76,7 +98,7 @@ let links_data = graph.links
 ]*/
 
 /*
-nodes_data =  [
+nodes =  [
     {"name": "Lillian", "sex": "F", x: 100, y: 100},
     {"name": "Gordon", "sex": "M", x: 150, y: 150},
     {"name": "Sylvester", "sex": "M", x: 200, y: 200},
@@ -98,7 +120,7 @@ nodes_data =  [
 
 //Relationships
 //type: A for Ally, E for Enemy - color of the links
-/*links_data = [
+/*links = [
     {"source": "Sylvester", "target": "Gordon", "type":"A" },
     {"source": "Sylvester", "target": "Lillian", "type":"A" },
     {"source": "Sylvester", "target": "Mary", "type":"A"},
@@ -126,12 +148,26 @@ nodes_data =  [
     {"source": "Mauer", "target": "Jessie", "type":"E"}
 ]*/
 
-let svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+function getNeighbors(node) {
+    return links.reduce((neighbors, link) => {
+        console.log(link)
+            if (link.target === node.index) {
+                neighbors.push(nodes[link.target])
+                //neighbors.push(nodes.find(n => n.id === link.source.id))
+                //neighbors.push(link.source.id)
+            } else if (link.source === node.index) {
+                //neighbors.push(nodes.find(n => n.id === link.target.id))
+                //neighbors.push(link.target.id)
+                neighbors.push(nodes[link.source])
+            }
+            return neighbors
+        },
+        []
+    )
+}
 
 //add zoom capabilities
-var zoom_handler = d3.zoom()
+let zoom_handler = d3.zoom()
     .on("zoom", zoom_actions);
 
 zoom_handler(svg);
@@ -141,34 +177,35 @@ function zoom_actions(){
 }
 
 //add encompassing group for the zoom
-var g = svg.append("g")
+let g = svg.append("g")
     .attr("class", "everything");
 
 //set up the simulation
 //nodes only for now
 let simulation = d3.forceSimulation()
-    .nodes(nodes_data);
+    .nodes(nodes);
 
 //add forces
 //we're going to add a charge to each node
 //also going to add a centering force
 simulation
-.force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
-.force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
+    .force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
+    .force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
 
 
 //Create the link force
 //We need the id accessor to use named sources and targets
-let link_force =  d3.forceLink(links_data)
+let link_force =  d3.forceLink(links)
     //.id(function(d) { return d.id; }) // link.id braucht funktion um id attribut von nodes zu wissen
     //.distance(50)   // default 30 - length of the links
-    .strength(1)
+    .strength(0)
 
-//simulation.force("links",link_force)
+
+simulation.force("links",link_force)
 
 function splitting_force() {
-    for (var i = 0, n = nodes_data.length; i < n; ++i) {
-        curr_node = nodes_data[i];
+    for (var i = 0, n = nodes.length; i < n; ++i) {
+        curr_node = nodes[i];
         curr_node.x = curr_node.xx
         curr_node.y = curr_node.yy
         // do things here to change the position and velocity of curr_node
@@ -176,30 +213,39 @@ function splitting_force() {
         // velocity is curr_node.vx, curr_node.vy
     }
 }
-//Function to choose what color circle we have
-//Let's return blue for males and red for females
-function circleColour(d){
-    if(d.type === "A"){
-        return "blue";
-    } else if(d.type === "B") {
-        return "black";
-    } else {
-        // type === C
-        return "red"
-    }
+
+function getNodeColor(node, neighbors) {
+    //console.log({node, neighbors})
+    if (Array.isArray(neighbors) && neighbors.indexOf(node) > -1) {
+        return 'green'
+    } else if(node.color) return node.color
+    return 'gray'
 }
 
+
 //draw circles for the nodes
-let node = g
+let nodeElements = g
     .append("g")
     .attr("class", "nodes")
     .selectAll("circle")
-    .data(nodes_data)
+    .data(nodes)
     .enter()
     .append("circle")
     .attr("r", 15)
-    .attr("fill", circleColour)
+    .attr("fill", getNodeColor)
 //.append
+
+
+
+//draw lines for the links
+let linkElements = g
+    .append("g")
+    .attr("class", "links")
+    .selectAll("line")
+    .data(links)
+    .enter().append("line")
+    .attr("stroke-width", 2)
+    .style("stroke", 'green');      //function linkColor()
 
 
 //node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
@@ -207,14 +253,14 @@ let node = g
 // The complete tickActions function
 function tickActions() {
     //update circle positions each tick of the simulation
-    node
+    nodeElements
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
 
     //update link positions
     //simply tells one end of the line to follow one node around
     //and the other end of the line to follow the other node around
-    link
+    linkElements
         .attr("x1", function(d) { return d.source.x; })
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
@@ -223,29 +269,6 @@ function tickActions() {
 }
 simulation.on("tick", tickActions );
 
-
-
-
-//Function to choose the line colour and thickness
-//If the link type is "A" return green
-//If the link type is "E" return red
-function linkColour(d){
-    //console.log(d);
-    if(d.type === "A"){
-        return "green";
-    } else {
-        return "red";
-    }
-}
-//draw lines for the links
-let link = g
-    .append("g")
-    .attr("class", "links")
-    .selectAll("line")
-    .data(links_data)
-    .enter().append("line")
-    .attr("stroke-width", 2)
-    .style("stroke", 'green');      //function linkColor()
 
 
 // aktuell lässt sich die positionierung beibehalten wenn alle forces ausgeschaltet sind
@@ -260,30 +283,27 @@ let link = g
             .attr("cy", d.y = d3.event.y  );
     });*/
 
-function drag_start(d) {
-    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-}
-
-function drag_drag(d) {
-    //console.log(`${d.x}:${d.y}`)
-    //console.log(`${d.fx}:${d.fy}`)
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-}
-
-function drag_end(d) {
-    if (!d3.event.active) simulation.alphaTarget(0);
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-}
-
-let drag_handler = d3.drag()
-    .on("start", drag_start)
-    .on("drag", drag_drag)
-    .on("end", drag_end);
+let dragDrop = d3.drag()
+    .on('start', function (node) {
+        let neighbors = [...getNeighbors(node), node]
+        console.log(neighbors)
+        nodeElements.attr('fill', function (node) { return getNodeColor(node, neighbors) })
+        node.fx = node.x
+        node.fy = node.y
+        //console.log(node)
+    }).on('drag', function (node) {
+        simulation.alphaTarget(0.7).restart()
+        node.fx = d3.event.x
+        node.fy = d3.event.y
+    }).on('end', function (node) {
+        nodeElements.attr('fill', function (node) { return getNodeColor(node) })
+        if (!d3.event.active) {
+            simulation.alphaTarget(0)
+        }
+        node.fx = d3.event.x
+        node.fy = d3.event.y
+    })
 
 
 //apply the drag_handler to our nodes
-drag_handler(node);
+dragDrop(nodeElements);

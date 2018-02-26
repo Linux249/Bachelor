@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-    entry: './src/index2.js',
+    entry: './src/examples/index2.js',
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
@@ -15,6 +15,7 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.resolve(__dirname, './public')
+        contentBase: path.resolve(__dirname, './public'),
+        port: 3000
     }
 };

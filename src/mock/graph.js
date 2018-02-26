@@ -1,7 +1,8 @@
 export const graph = {
     'directed': false,
     'graph': {'name': 'Artist Relations'},
-    'nodes': [{
+    'nodes': [
+        {
         'image name': 'vincent-van-gogh_sower-1888-1',
         'color': 'magenta',
         'y': -11.679933,
