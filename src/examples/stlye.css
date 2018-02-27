@@ -7,3 +7,12 @@
     stroke: #fff;
     stroke-width: 1.5px;
 }
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+}

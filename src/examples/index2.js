@@ -4,6 +4,31 @@ import './stlye.css'
 
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/
 
+let nodes, links
+
+let sendButton = document.getElementById('send');
+sendButton.addEventListener('click', () => {
+    console.log("hello")
+
+    let data = nodes.map((node) => {
+        let obj = {
+            x: node.fx,
+            y: node.fy,
+            modified: node.modified,
+            index: node.index
+        }
+        return obj
+    })
+    sendData(data)
+})
+
+let loadButton = document.getElementById('load');
+loadButton.addEventListener('click', () => {
+    console.log("load")
+    getData()
+})
+
+
 
 // save graph to api
 /*fetch("http://localhost:8000/api/v1/dataFromFile", {
@@ -15,19 +40,43 @@ import './stlye.css'
     body: JSON.stringify(graph)
 }).then(res => res.json()).then(resData => console.log({resData}))*/
 
-fetch("http://localhost:8000/api/v1/dataFromFile", {
-    method: "GET",
-    mode: 'cors'
-})
-    .then(res => res.json())
-    .then(resData => run(resData))
+function getData () {
+    fetch("http://localhost:8000/api/v1/dataFromFile", {
+        method: "GET",
+        mode: 'cors'
+    })
+        .then(res => res.json())
+        .then(resData => run(resData))
+}
 
+function sendData(data) {
+
+
+    fetch("http://localhost:8000/api/v1/dataFromFile", {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        mode: 'no-cors',
+        body: JSON.stringify(data)
+    })
+        .then(res => res.json())
+        .then(resData => console.log(resData))
+}
+
+
+function refreshData() {
+    // TODO loading
+
+    //
+    fetch('', {})
+}
 
 let width = window.innerWidth
 let height = window.innerHeight
 
 let svg = d3.select('svg')
-svg.attr('width', width).attr('height', height)
+svg.attr('width', width).attr('height', height)//.attr("viewport", '250 250 20 20')
 
 /*nodes = [
 {
@@ -75,15 +124,14 @@ svg.attr('width', width).attr('height', height)
 
 function run(data) {
 
-    let { nodes, links } = data
-
-    console.log(graph)
+    nodes = data.nodes
+    links = data.links
 
     nodes = nodes.map(node => {
         //console.log(node)
         //node.fx = node.x*50 + 700
         //node.x = node.x*50 + 700 // 20fache
-
+        node.modified = false
         node.fx = node.x*width/25 + width/2 // 20fache
         node.fy = node.y*height/25 + height/2  // 20fache
 
@@ -123,7 +171,6 @@ function run(data) {
         }
     )
      */
-
 
     function getNeighbors(node) {
         //console.log(node)
@@ -282,15 +329,16 @@ function run(data) {
             //simulation.alphaTarget(0.7).restart()
             simulation.restart()
             // distance
-            const dX =  d3.event.x - node.startX
-            const dY = d3.event.y - node.startY
+            //const dX =  d3.event.x - node.startX
+            //const dY = d3.event.y - node.startY
             //console.log({dX, dY})
             neighbors.map(n => {
                 //console.log(n.value)
                 // weighted
-                const dXw = dX/n.value
-                const dYw = dY/n.value
+                //const dXw = dX/n.value
+                //const dYw = dY/n.value
                 //console.log({dXw, dYw})
+                if(!n.modified) n.modified = true
                 n.fx += d3.event.dx/n.value
                 n.fy += d3.event.dy/n.value
             })
@@ -299,6 +347,7 @@ function run(data) {
             //neighbors[0].fy = d3.event.y +10
 
             //console.log(d3.event.dx)
+            if(!node.modified) node.modified = true
             node.fx = d3.event.x
             node.fy = d3.event.y
         }).on('end', function (node) {

@@ -19,6 +19,7 @@ import json
 # Fragen
 # welches format
 
+"""
 def save_obj(obj, name):
     with open(name + '.pkl', 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
@@ -26,7 +27,16 @@ def save_obj(obj, name):
 def load_obj(name):
     with open('obj/' + name + '.pkl', 'rb') as f:
         return pickle.load(f)
+"""
 
+def get_graph(userData = []):
+    if userData:
+        print(b"not empty")
+        print(userData)
+
+    filename = "data/response_data.txt"
+    with open(filename, "rb") as f: 
+        return f.read()
 
 ## MyHTTPHandler beschreibt den Umgang mit HTTP Requests
 class MyHTTPHandler(BaseHTTPRequestHandler):
@@ -54,9 +64,8 @@ class MyHTTPHandler(BaseHTTPRequestHandler):
             self.end_headers()
             #self.wfile.write(b"test")  #body zurueckschicken
 
-            filename = "data/response_data.txt"
-            with open(filename, "rb") as f: 
-                self.wfile.write(f.read())
+            
+            self.wfile.write(get_graph())
 
     def do_POST(self):
         """
@@ -70,14 +79,14 @@ class MyHTTPHandler(BaseHTTPRequestHandler):
                 #return
             content_len = int(self.headers['Content-Length'])
 
-            # convert body to str
+            # get body from request
             body = self.rfile.read(content_len) 
 
-            # convert str to dict
-            data = json.loads(str(body, encoding='utf-8'))
+            # convert str to list 
+            response = json.loads(str(body, encoding='utf-8'))
             #print(data)
 
-            
+            """
             ### Datensatz speichern ###
             if(save_to_file):
                 filename = "data/response_data.txt"
@@ -86,12 +95,20 @@ class MyHTTPHandler(BaseHTTPRequestHandler):
                     f.write(body.decode('utf-8'))
                     f.close()
                     print("File ", filename, " saved")
-            
+            """
+
+            name = get_graph(response)
+
             ### POST Request beantworten ### 
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(body)  #body zurueckschicken
+            #print(type(data))
+
+            #data = json.dumps(data)
+            #print(type(data))
+
+            self.wfile.write(name)  #body zurueckschicken
 
         return
  
@@ -100,7 +117,7 @@ if __name__ == "__main__":
     # config
     HOST_NAME = ""
     PORT_NUMBER = 8000
-    save_to_file = True
+    save_to_file = False
     try:
         http_server = HTTPServer((HOST_NAME, PORT_NUMBER), MyHTTPHandler) 
         print(time.asctime(), 'Server Starts - %s:%s' % (HOST_NAME, PORT_NUMBER), '- Beenden mit STRG+C') 

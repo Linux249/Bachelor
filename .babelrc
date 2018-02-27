@@ -1,5 +1,5 @@
 {
-  "presets":["env"]
+  "presets":["env", "stage-0"]
 }
 
 // TODO stage-0 hier hinzufügen?
