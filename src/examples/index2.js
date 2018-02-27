@@ -1,6 +1,8 @@
 import * as d3 from 'd3'
 import graph from '../mock/graph'
 
+let { nodes, links } = graph
+
 console.log(graph)
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/
 
@@ -11,7 +13,50 @@ let height = window.innerHeight
 let svg = d3.select('svg')
 svg.attr('width', width).attr('height', height)
 
-let nodes = graph.nodes.map(node => {
+/*nodes = [
+{
+
+    'image name': 'vincent-van-gogh_sower-1888-1',
+    'color': 'magenta',
+    'y': -11.679933,
+    'x': -1.2364955,
+    'fixed': true,
+    'size': 5
+}, {
+    'image name':
+        'william-turner_the-bass-rock-for-the-provincial-antiquities-of-scotland',
+    'color': 'yellow',
+    'y': -4.3107944,
+    'x': 5.371901,
+    'fixed': true,
+    'size': 5
+}, {
+    'image name':
+        'rembrandt_the-descent-from-the-cross-by-torchlight-1654',
+    'color': 'lime',
+    'y': 5.8075552,
+    'x': -1.6942906,
+    'fixed': true,
+    'size': 5
+}, {
+    'image name':
+        'claude-monet_cliff-at-grainval-near-fecamp',
+    'color': 'cyan',
+    'y': -10.629107,
+    'x': -2.3567722,
+    'fixed': true,
+    'size': 5
+}, {
+    'image name':
+        'vincent-van-gogh_cypresses-1889-2',
+    'color': 'magenta',
+    'y': 2.8836176,
+    'x': -1.6800337,
+    'fixed': true,
+    'size': 5
+}]
+*/
+nodes = nodes.map(node => {
     //console.log(node)
     //node.fx = node.x*50 + 700
     //node.x = node.x*50 + 700 // 20fache
@@ -23,28 +68,24 @@ let nodes = graph.nodes.map(node => {
     //node.fy = node.y*20 + 300  // 20fache
     return node
 })
-
-    /*const xx = [
-    {"id": 0, "label": "A", y: 200, x: 200},
-    {"id": 1, "label": "A", y: 400, x: 200},
-    {"id": 2, "label": "A", y: 300, x: 400},
-
-    {"id": 3, "label": "B", y: 100, x: 600},
-    {"id": 4, "label": "B", y: 500, x: 600},
-
-    {"id": 5, "label": "C", y: 300, x: 800},
-    {"id": 6, "label": "C", y: 200, x: 1000},
-    {"id": 7, "label": "C", y: 400, x: 1000}
-]*/
-
-nodes = nodes.map(node => {
-    //node.fy = node.f
-    return node
-})
-
-//Create links data
-let links = graph.links
-
+/*
+links = [
+    {
+        'source': 0,
+        'target': 1,
+        'value': 3.0
+    },
+    {
+        'source': 0,
+        'target': 2,
+        'value': 3.0
+    }, {
+        'source': 2,
+        'target': 3,
+        'value': 3.0
+    },
+    {'source': 3, 'target': 4, 'value': 3.0}]
+*/
 console.log(links)
 /*
 .map(link => {
@@ -59,106 +100,26 @@ console.log(links)
     }
 )
  */
-/*
-    const yy =  [
-    {"source": 0, "target": 1, id: 1},
-    {"source": 1, "target": 2, id: 2},
-    {"source": 2, "target": 0, id: 3},
 
-    {"source": 2, "target": 3, id: 4},
-    {"source": 2, "target": 4, id: 5},
-    {"source": 5, "target": 3, id: 6},
-    {"source": 5, "target": 4, id: 7},
-
-    {"source": 5, "target": 6, id: 8},
-    {"source": 7, "target": 5, id: 9},
-    {"source": 6, "target": 7, id: 10}
-]*/
-
-//Characters
-// sex is for different node colors
-/*nodes =  [
-    {"name": "Lillian", "sex": "F", fx: 100, fy: 100},
-    {"name": "Gordon", "sex": "M", fx: 150, fy: 150},
-    {"name": "Sylvester", "sex": "M", fx: 200, fy: 200},
-    {"name": "Mary", "sex": "F", fx: 250, fy: 250},
-    {"name": "Helen", "sex": "F", fx: 300, fy: 300},
-    {"name": "Jamie", "sex": "M", fx: 350, fy: 350},
-    {"name": "Jessie", "sex": "F", fx: 400, fy: 400},
-    {"name": "Ashton", "sex": "M", fx: 450, fy: 450},
-    {"name": "Duncan", "sex": "M", fx: 500, fy: 30},
-    {"name": "Evette", "sex": "F", fx: 550, fy: 120},
-    {"name": "Mauer", "sex": "M", fx: 600, fy: 170},
-    {"name": "Fray", "sex": "F", fx: 650, fy: 220},
-    {"name": "Duke", "sex": "M", fx: 700, fy: 270},
-    {"name": "Baron", "sex": "M", fx: 750, fy: 320},
-    {"name": "Infante", "sex": "M", fx: 800, fy: 370},
-    {"name": "Percy", "sex": "M", fx: 850, fy: 420},
-    {"name": "Cynthia", "sex": "F", fx: 900, fy: 470}
-]*/
-
-/*
-nodes =  [
-    {"name": "Lillian", "sex": "F", x: 100, y: 100},
-    {"name": "Gordon", "sex": "M", x: 150, y: 150},
-    {"name": "Sylvester", "sex": "M", x: 200, y: 200},
-    {"name": "Mary", "sex": "F", x: 250, y: 250},
-    {"name": "Helen", "sex": "F", x: 300, y: 300},
-    {"name": "Jamie", "sex": "M", x: 350, y: 350},
-    {"name": "Jessie", "sex": "F", x: 400, y: 400},
-    {"name": "Ashton", "sex": "M", x: 450, y: 450},
-    {"name": "Duncan", "sex": "M", x: 500, y: 30},
-    {"name": "Evette", "sex": "F", x: 550, y: 120},
-    {"name": "Mauer", "sex": "M", x: 600, y: 170},
-    {"name": "Fray", "sex": "F", x: 650, y: 220},
-    {"name": "Duke", "sex": "M", x: 700, y: 270},
-    {"name": "Baron", "sex": "M", x: 750, y: 320},
-    {"name": "Infante", "sex": "M", x: 800, y: 370},
-    {"name": "Percy", "sex": "M", x: 850, y: 420},
-    {"name": "Cynthia", "sex": "F", x: 900, y: 470}
-]*/
-
-//Relationships
-//type: A for Ally, E for Enemy - color of the links
-/*links = [
-    {"source": "Sylvester", "target": "Gordon", "type":"A" },
-    {"source": "Sylvester", "target": "Lillian", "type":"A" },
-    {"source": "Sylvester", "target": "Mary", "type":"A"},
-    {"source": "Sylvester", "target": "Jamie", "type":"A"},
-    {"source": "Sylvester", "target": "Jessie", "type":"A"},
-    {"source": "Sylvester", "target": "Helen", "type":"A"},
-    {"source": "Helen", "target": "Gordon", "type":"A"},
-    {"source": "Mary", "target": "Lillian", "type":"A"},
-    {"source": "Ashton", "target": "Mary", "type":"A"},
-    {"source": "Duncan", "target": "Jamie", "type":"A"},
-    {"source": "Gordon", "target": "Jessie", "type":"A"},
-    {"source": "Sylvester", "target": "Fray", "type":"E"},
-    {"source": "Fray", "target": "Mauer", "type":"A"},
-    {"source": "Fray", "target": "Cynthia", "type":"A"},
-    {"source": "Fray", "target": "Percy", "type":"A"},
-    {"source": "Percy", "target": "Cynthia", "type":"A"},
-    {"source": "Infante", "target": "Duke", "type":"A"},
-    {"source": "Duke", "target": "Gordon", "type":"A"},
-    {"source": "Duke", "target": "Sylvester", "type":"A"},
-    {"source": "Baron", "target": "Duke", "type":"A"},
-    {"source": "Baron", "target": "Sylvester", "type":"E"},
-    {"source": "Evette", "target": "Sylvester", "type":"E"},
-    {"source": "Cynthia", "target": "Sylvester", "type":"E"},
-    {"source": "Cynthia", "target": "Jamie", "type":"E"},
-    {"source": "Mauer", "target": "Jessie", "type":"E"}
-]*/
 
 function getNeighbors(node) {
+    //console.log(node)
     return links.reduce((neighbors, link) => {
-        console.log(link)
-            if (link.target === node.index) {
-                neighbors.push(nodes[link.target])
+        //console.log(link)
+            if (link.target === node) {
+                //console.log("target")
+                //console.log(node)
+                //console.log(link.target)
+                link.source.value = link.value
+                neighbors.push(link.source)
                 //neighbors.push(nodes.find(n => n.id === link.source.id))
                 //neighbors.push(link.source.id)
-            } else if (link.source === node.index) {
+            } else if (link.source === node) {
+                link.target.value = link.value
+                //console.log("source")
                 //neighbors.push(nodes.find(n => n.id === link.target.id))
                 //neighbors.push(link.target.id)
-                neighbors.push(nodes[link.source])
+                neighbors.push(link.target)
             }
             return neighbors
         },
@@ -196,28 +157,27 @@ simulation
 //Create the link force
 //We need the id accessor to use named sources and targets
 let link_force =  d3.forceLink(links)
-    //.id(function(d) { return d.id; }) // link.id braucht funktion um id attribut von nodes zu wissen
+    .id(function(d) { return d.index; }) // link.id braucht funktion um id attribut von nodes zu wissen
     //.distance(50)   // default 30 - length of the links
     .strength(0)
 
-
 simulation.force("links",link_force)
 
-function splitting_force() {
-    for (var i = 0, n = nodes.length; i < n; ++i) {
-        curr_node = nodes[i];
-        curr_node.x = curr_node.xx
-        curr_node.y = curr_node.yy
-        // do things here to change the position and velocity of curr_node
-        // position is curr_node.x, curr_node.y
-        // velocity is curr_node.vx, curr_node.vy
-    }
-}
 
 function getNodeColor(node, neighbors) {
     //console.log({node, neighbors})
-    if (Array.isArray(neighbors) && neighbors.indexOf(node) > -1) {
-        return 'green'
+    if (Array.isArray(neighbors)) {
+        //console.log("neighbors")
+        //console.log(neighbors)
+        //console.log(node)
+        const t = neighbors.find(n => {
+            //console.log("n: "+ n.index)
+            //console.log("node: " + node.index)
+            return (n.index === node.index)
+                //console.log("Green")
+        })
+        if(t) return 'green'
+
     } else if(node.color) return node.color
     return 'gray'
 }
@@ -236,7 +196,6 @@ let nodeElements = g
 //.append
 
 
-
 //draw lines for the links
 let linkElements = g
     .append("g")
@@ -245,7 +204,7 @@ let linkElements = g
     .data(links)
     .enter().append("line")
     .attr("stroke-width", 2)
-    .style("stroke", 'green');      //function linkColor()
+    .style("stroke", '#c8c8c8');      //function linkColor()
 
 
 //node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
@@ -283,16 +242,40 @@ simulation.on("tick", tickActions );
             .attr("cy", d.y = d3.event.y  );
     });*/
 
+let neighbors
+
 let dragDrop = d3.drag()
     .on('start', function (node) {
-        let neighbors = [...getNeighbors(node), node]
+        neighbors = getNeighbors(node)
+        console.log("in drag")
         console.log(neighbors)
-        nodeElements.attr('fill', function (node) { return getNodeColor(node, neighbors) })
-        node.fx = node.x
-        node.fy = node.y
+        nodeElements.attr('fill',  function (node) { return getNodeColor(node, neighbors) })
+        //node.fx = node.x
+        //node.fy = node.y
+        node.startX = node.fx
+        node.startY = node.fy
         //console.log(node)
     }).on('drag', function (node) {
-        simulation.alphaTarget(0.7).restart()
+        //simulation.alphaTarget(0.7).restart()
+        simulation.restart()
+        // distance
+        const dX =  d3.event.x - node.startX
+        const dY = d3.event.y - node.startY
+        //console.log({dX, dY})
+        neighbors.map(n => {
+            //console.log(n.value)
+            // weighted
+            const dXw = dX/n.value
+            const dYw = dY/n.value
+            //console.log({dXw, dYw})
+            n.fx += d3.event.dx/n.value
+            n.fy += d3.event.dy/n.value
+        })
+
+        //neighbors[0].fx = d3.event.x +10
+        //neighbors[0].fy = d3.event.y +10
+
+        //console.log(d3.event.dx)
         node.fx = d3.event.x
         node.fy = d3.event.y
     }).on('end', function (node) {
@@ -300,8 +283,8 @@ let dragDrop = d3.drag()
         if (!d3.event.active) {
             simulation.alphaTarget(0)
         }
-        node.fx = d3.event.x
-        node.fy = d3.event.y
+        //node.fx = d3.event.x
+        //node.fy = d3.event.y
     })
 
 
