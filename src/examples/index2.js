@@ -1,10 +1,26 @@
 import * as d3 from 'd3'
 import graph from '../mock/graph'
+import './stlye.css'
 
-let { nodes, links } = graph
-
-console.log(graph)
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/
+
+
+// save graph to api
+/*fetch("http://localhost:8000/api/v1/dataFromFile", {
+    method: "POST",
+    headers: {
+        'content-type': 'application/json'
+    },
+    mode: 'no-cors',
+    body: JSON.stringify(graph)
+}).then(res => res.json()).then(resData => console.log({resData}))*/
+
+fetch("http://localhost:8000/api/v1/dataFromFile", {
+    method: "GET",
+    mode: 'cors'
+})
+    .then(res => res.json())
+    .then(resData => run(resData))
 
 
 let width = window.innerWidth
@@ -56,177 +72,184 @@ svg.attr('width', width).attr('height', height)
     'size': 5
 }]
 */
-nodes = nodes.map(node => {
-    //console.log(node)
-    //node.fx = node.x*50 + 700
-    //node.x = node.x*50 + 700 // 20fache
 
-    node.fx = node.x*width/25 + width/2 // 20fache
-    node.fy = node.y*height/25 + height/2  // 20fache
+function run(data) {
 
-    //node.y = node.y*20 + 300  // 20fache
-    //node.fy = node.y*20 + 300  // 20fache
-    return node
-})
-/*
-links = [
-    {
-        'source': 0,
-        'target': 1,
-        'value': 3.0
-    },
-    {
-        'source': 0,
-        'target': 2,
-        'value': 3.0
-    }, {
-        'source': 2,
-        'target': 3,
-        'value': 3.0
-    },
-    {'source': 3, 'target': 4, 'value': 3.0}]
-*/
-console.log(links)
-/*
-.map(link => {
-    console.log(link)
-        const li = {
-            index: link.index,
-            source: link.source.index,
-            target: link.target.index
-        }
-        console.log(li)
-        return li
-    }
-)
- */
+    let { nodes, links } = data
 
+    console.log(graph)
 
-function getNeighbors(node) {
-    //console.log(node)
-    return links.reduce((neighbors, link) => {
-        //console.log(link)
-            if (link.target === node) {
-                //console.log("target")
-                //console.log(node)
-                //console.log(link.target)
-                link.source.value = link.value
-                neighbors.push(link.source)
-                //neighbors.push(nodes.find(n => n.id === link.source.id))
-                //neighbors.push(link.source.id)
-            } else if (link.source === node) {
-                link.target.value = link.value
-                //console.log("source")
-                //neighbors.push(nodes.find(n => n.id === link.target.id))
-                //neighbors.push(link.target.id)
-                neighbors.push(link.target)
-            }
-            return neighbors
+    nodes = nodes.map(node => {
+        //console.log(node)
+        //node.fx = node.x*50 + 700
+        //node.x = node.x*50 + 700 // 20fache
+
+        node.fx = node.x*width/25 + width/2 // 20fache
+        node.fy = node.y*height/25 + height/2  // 20fache
+
+        //node.y = node.y*20 + 300  // 20fache
+        //node.fy = node.y*20 + 300  // 20fache
+        return node
+    })
+    /*
+    links = [
+        {
+            'source': 0,
+            'target': 1,
+            'value': 3.0
         },
-        []
+        {
+            'source': 0,
+            'target': 2,
+            'value': 3.0
+        }, {
+            'source': 2,
+            'target': 3,
+            'value': 3.0
+        },
+        {'source': 3, 'target': 4, 'value': 3.0}]
+    */
+    console.log(links)
+    /*
+    .map(link => {
+        console.log(link)
+            const li = {
+                index: link.index,
+                source: link.source.index,
+                target: link.target.index
+            }
+            console.log(li)
+            return li
+        }
     )
-}
+     */
+
+
+    function getNeighbors(node) {
+        //console.log(node)
+        return links.reduce((neighbors, link) => {
+                //console.log(link)
+                if (link.target === node) {
+                    //console.log("target")
+                    //console.log(node)
+                    //console.log(link.target)
+                    link.source.value = link.value
+                    neighbors.push(link.source)
+                    //neighbors.push(nodes.find(n => n.id === link.source.id))
+                    //neighbors.push(link.source.id)
+                } else if (link.source === node) {
+                    link.target.value = link.value
+                    //console.log("source")
+                    //neighbors.push(nodes.find(n => n.id === link.target.id))
+                    //neighbors.push(link.target.id)
+                    neighbors.push(link.target)
+                }
+                return neighbors
+            },
+            []
+        )
+    }
 
 //add zoom capabilities
-let zoom_handler = d3.zoom()
-    .on("zoom", zoom_actions);
+    let zoom_handler = d3.zoom()
+        .on("zoom", zoom_actions);
 
-zoom_handler(svg);
+    zoom_handler(svg);
 
-function zoom_actions(){
-    g.attr("transform", d3.event.transform)
-}
+    function zoom_actions(){
+        g.attr("transform", d3.event.transform)
+    }
 
 //add encompassing group for the zoom
-let g = svg.append("g")
-    .attr("class", "everything");
+    let g = svg.append("g")
+        .attr("class", "everything");
 
 //set up the simulation
 //nodes only for now
-let simulation = d3.forceSimulation()
-    .nodes(nodes);
+    let simulation = d3.forceSimulation()
+        .nodes(nodes);
 
 //add forces
 //we're going to add a charge to each node
 //also going to add a centering force
-simulation
-    .force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
-    .force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
+    simulation
+        .force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
+        .force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
 
 
 //Create the link force
 //We need the id accessor to use named sources and targets
-let link_force =  d3.forceLink(links)
-    .id(function(d) { return d.index; }) // link.id braucht funktion um id attribut von nodes zu wissen
-    //.distance(50)   // default 30 - length of the links
-    .strength(0)
+    let link_force =  d3.forceLink(links)
+        .id(function(d) { return d.index; }) // link.id braucht funktion um id attribut von nodes zu wissen
+        //.distance(50)   // default 30 - length of the links
+        .strength(0)
 
-simulation.force("links",link_force)
+    simulation.force("links",link_force)
 
 
-function getNodeColor(node, neighbors) {
-    //console.log({node, neighbors})
-    if (Array.isArray(neighbors)) {
-        //console.log("neighbors")
-        //console.log(neighbors)
-        //console.log(node)
-        const t = neighbors.find(n => {
-            //console.log("n: "+ n.index)
-            //console.log("node: " + node.index)
-            return (n.index === node.index)
+    function getNodeColor(node, neighbors) {
+        //console.log({node, neighbors})
+        if (Array.isArray(neighbors)) {
+            //console.log("neighbors")
+            //console.log(neighbors)
+            //console.log(node)
+            const t = neighbors.find(n => {
+                //console.log("n: "+ n.index)
+                //console.log("node: " + node.index)
+                return (n.index === node.index)
                 //console.log("Green")
-        })
-        if(t) return 'green'
+            })
+            if(t) return 'green'
 
-    } else if(node.color) return node.color
-    return 'gray'
-}
+        } else if(node.color) return node.color
+        return 'gray'
+    }
 
 
 //draw circles for the nodes
-let nodeElements = g
-    .append("g")
-    .attr("class", "nodes")
-    .selectAll("circle")
-    .data(nodes)
-    .enter()
-    .append("circle")
-    .attr("r", 15)
-    .attr("fill", getNodeColor)
+    let nodeElements = g
+        .append("g")
+        .attr("class", "nodes")
+        .selectAll("circle")
+        .data(nodes)
+        .enter()
+        .append("circle")
+        .attr("r", 15)
+        .attr("fill", getNodeColor)
 //.append
 
 
 //draw lines for the links
-let linkElements = g
-    .append("g")
-    .attr("class", "links")
-    .selectAll("line")
-    .data(links)
-    .enter().append("line")
-    .attr("stroke-width", 2)
-    .style("stroke", '#c8c8c8');      //function linkColor()
+    let linkElements = g
+        .append("g")
+        .attr("class", "links")
+        .selectAll("line")
+        .data(links)
+        .enter().append("line")
+        .attr("stroke-width", 2)
+        .style("stroke", '#c8c8c8');      //function linkColor()
 
 
 //node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 // TODO warum nicht 'node' der funktion übergeben + return?
 // The complete tickActions function
-function tickActions() {
-    //update circle positions each tick of the simulation
-    nodeElements
-        .attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
+    function tickActions() {
+        //update circle positions each tick of the simulation
+        nodeElements
+            .attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
 
-    //update link positions
-    //simply tells one end of the line to follow one node around
-    //and the other end of the line to follow the other node around
-    linkElements
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+        //update link positions
+        //simply tells one end of the line to follow one node around
+        //and the other end of the line to follow the other node around
+        linkElements
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
 
-}
-simulation.on("tick", tickActions );
+    }
+    simulation.on("tick", tickActions );
 
 
 
@@ -235,58 +258,59 @@ simulation.on("tick", tickActions );
 
 //create drag handler with d3.drag()
 //only interested in "drag" event listener, not "start" or "end"
-/*let drag_handler = d3.drag()
-    .on("drag", function(d) {
-        d3.select(this)
-            .attr("cx", d.x = d3.event.x  )
-            .attr("cy", d.y = d3.event.y  );
-    });*/
+    /*let drag_handler = d3.drag()
+        .on("drag", function(d) {
+            d3.select(this)
+                .attr("cx", d.x = d3.event.x  )
+                .attr("cy", d.y = d3.event.y  );
+        });*/
 
-let neighbors
+    let neighbors
 
-let dragDrop = d3.drag()
-    .on('start', function (node) {
-        neighbors = getNeighbors(node)
-        console.log("in drag")
-        console.log(neighbors)
-        nodeElements.attr('fill',  function (node) { return getNodeColor(node, neighbors) })
-        //node.fx = node.x
-        //node.fy = node.y
-        node.startX = node.fx
-        node.startY = node.fy
-        //console.log(node)
-    }).on('drag', function (node) {
-        //simulation.alphaTarget(0.7).restart()
-        simulation.restart()
-        // distance
-        const dX =  d3.event.x - node.startX
-        const dY = d3.event.y - node.startY
-        //console.log({dX, dY})
-        neighbors.map(n => {
-            //console.log(n.value)
-            // weighted
-            const dXw = dX/n.value
-            const dYw = dY/n.value
-            //console.log({dXw, dYw})
-            n.fx += d3.event.dx/n.value
-            n.fy += d3.event.dy/n.value
+    let dragDrop = d3.drag()
+        .on('start', function (node) {
+            neighbors = getNeighbors(node)
+            console.log("in drag")
+            console.log(neighbors)
+            nodeElements.attr('fill',  function (node) { return getNodeColor(node, neighbors) })
+            //node.fx = node.x
+            //node.fy = node.y
+            node.startX = node.fx
+            node.startY = node.fy
+            //console.log(node)
+        }).on('drag', function (node) {
+            //simulation.alphaTarget(0.7).restart()
+            simulation.restart()
+            // distance
+            const dX =  d3.event.x - node.startX
+            const dY = d3.event.y - node.startY
+            //console.log({dX, dY})
+            neighbors.map(n => {
+                //console.log(n.value)
+                // weighted
+                const dXw = dX/n.value
+                const dYw = dY/n.value
+                //console.log({dXw, dYw})
+                n.fx += d3.event.dx/n.value
+                n.fy += d3.event.dy/n.value
+            })
+
+            //neighbors[0].fx = d3.event.x +10
+            //neighbors[0].fy = d3.event.y +10
+
+            //console.log(d3.event.dx)
+            node.fx = d3.event.x
+            node.fy = d3.event.y
+        }).on('end', function (node) {
+            nodeElements.attr('fill', function (node) { return getNodeColor(node) })
+            if (!d3.event.active) {
+                simulation.alphaTarget(0)
+            }
+            //node.fx = d3.event.x
+            //node.fy = d3.event.y
         })
-
-        //neighbors[0].fx = d3.event.x +10
-        //neighbors[0].fy = d3.event.y +10
-
-        //console.log(d3.event.dx)
-        node.fx = d3.event.x
-        node.fy = d3.event.y
-    }).on('end', function (node) {
-        nodeElements.attr('fill', function (node) { return getNodeColor(node) })
-        if (!d3.event.active) {
-            simulation.alphaTarget(0)
-        }
-        //node.fx = d3.event.x
-        //node.fy = d3.event.y
-    })
 
 
 //apply the drag_handler to our nodes
-dragDrop(nodeElements);
+    dragDrop(nodeElements);
+}
