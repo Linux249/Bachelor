@@ -3,10 +3,16 @@ import graph from '../mock/graph'
 import './stlye.css'
 
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/
+// fix dragged + img: http://bl.ocks.org/norrs/2883411
 
-let nodes, links
 
-let sendButton = document.getElementById('send');
+let nodes = [],
+    links = []
+
+let nodeElements
+let linkElements
+
+/*let sendButton = document.getElementById('send');
 sendButton.addEventListener('click', () => {
     console.log("hello")
 
@@ -20,12 +26,18 @@ sendButton.addEventListener('click', () => {
         return obj
     })
     sendData(data)
-})
+})*/
 
-let loadButton = document.getElementById('load');
+/*let loadButton = document.getElementById('load');
 loadButton.addEventListener('click', () => {
-    console.log("load")
+    console.log("load clicked")
     getData()
+})*/
+
+let refreshButton = document.getElementById('refresh');
+refreshButton.addEventListener('click', () => {
+    console.log("refresh clicked")
+    refreshData()
 })
 
 
@@ -40,36 +52,63 @@ loadButton.addEventListener('click', () => {
     body: JSON.stringify(graph)
 }).then(res => res.json()).then(resData => console.log({resData}))*/
 
-function getData () {
+/*function getData () {
     fetch("http://localhost:8000/api/v1/dataFromFile", {
         method: "GET",
         mode: 'cors'
     })
         .then(res => res.json())
         .then(resData => run(resData))
-}
+}*/
 
-function sendData(data) {
-
-
+/*function sendData(data) {
     fetch("http://localhost:8000/api/v1/dataFromFile", {
         method: "POST",
         headers: {
             'content-type': 'application/json'
         },
-        mode: 'no-cors',
+        //mode: 'cors',
         body: JSON.stringify(data)
     })
-        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+            return res.json()
+        })
         .then(resData => console.log(resData))
-}
+}*/
 
 
 function refreshData() {
     // TODO loading
-
+    refreshButton.innerText = "loading"
+    let data = nodes.map((node) => {
+        let obj = {
+            x: node.fx,
+            y: node.fy,
+            modified: node.modified,
+            index: node.index
+        }
+        return obj
+    })
     //
-    fetch('', {})
+    fetch('http://localhost:8000/api/v1/dataFromFile', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        mode: 'cors',
+        body: JSON.stringify(data)
+    })
+        .then(res => {
+
+            console.log(res)
+            return res.json()
+        })
+        .then(data => {
+            console.log(data)
+            run(data)
+            refreshButton.innerText = "Refresh"
+        })
 }
 
 let width = window.innerWidth
@@ -78,6 +117,19 @@ let height = window.innerHeight
 let svg = d3.select('svg')
 svg.attr('width', width).attr('height', height)//.attr("viewport", '250 250 20 20')
 
+//add zoom capabilities
+let zoom_handler = d3.zoom()
+    .on("zoom", zoom_actions);
+
+zoom_handler(svg);
+
+function zoom_actions(){
+    g.attr("transform", d3.event.transform)
+}
+
+//add encompassing group for the zoom
+let g = svg.append("g")
+    .attr("class", "everything");
 /*nodes = [
 {
 
@@ -123,10 +175,19 @@ svg.attr('width', width).attr('height', height)//.attr("viewport", '250 250 20 2
 */
 
 function run(data) {
+    if(nodes.length) {
+        g.remove()
+        g = svg.append("g")
+            .attr("class", "everything");
+    }
+
+    //if(linkElements) linkElements.remove()
 
     nodes = data.nodes
     links = data.links
 
+
+    
     nodes = nodes.map(node => {
         //console.log(node)
         //node.fx = node.x*50 + 700
@@ -139,38 +200,10 @@ function run(data) {
         //node.fy = node.y*20 + 300  // 20fache
         return node
     })
-    /*
-    links = [
-        {
-            'source': 0,
-            'target': 1,
-            'value': 3.0
-        },
-        {
-            'source': 0,
-            'target': 2,
-            'value': 3.0
-        }, {
-            'source': 2,
-            'target': 3,
-            'value': 3.0
-        },
-        {'source': 3, 'target': 4, 'value': 3.0}]
-    */
-    console.log(links)
-    /*
-    .map(link => {
-        console.log(link)
-            const li = {
-                index: link.index,
-                source: link.source.index,
-                target: link.target.index
-            }
-            console.log(li)
-            return li
-        }
-    )
-     */
+
+    let simulation = d3.forceSimulation().nodes(nodes);
+
+    //console.log(links)
 
     function getNeighbors(node) {
         //console.log(node)
@@ -197,24 +230,11 @@ function run(data) {
         )
     }
 
-//add zoom capabilities
-    let zoom_handler = d3.zoom()
-        .on("zoom", zoom_actions);
 
-    zoom_handler(svg);
-
-    function zoom_actions(){
-        g.attr("transform", d3.event.transform)
-    }
-
-//add encompassing group for the zoom
-    let g = svg.append("g")
-        .attr("class", "everything");
 
 //set up the simulation
 //nodes only for now
-    let simulation = d3.forceSimulation()
-        .nodes(nodes);
+
 
 //add forces
 //we're going to add a charge to each node
@@ -254,7 +274,7 @@ function run(data) {
 
 
 //draw circles for the nodes
-    let nodeElements = g
+    nodeElements = g
         .append("g")
         .attr("class", "nodes")
         .selectAll("circle")
@@ -267,7 +287,7 @@ function run(data) {
 
 
 //draw lines for the links
-    let linkElements = g
+    linkElements = g
         .append("g")
         .attr("class", "links")
         .selectAll("line")

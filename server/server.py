@@ -33,13 +33,22 @@ def get_graph(userData = []):
     if userData:
         print(b"not empty")
         print(userData)
-
+    else: 
+        print("empty body")
     filename = "data/response_data.txt"
     with open(filename, "rb") as f: 
         return f.read()
 
 ## MyHTTPHandler beschreibt den Umgang mit HTTP Requests
 class MyHTTPHandler(BaseHTTPRequestHandler):
+
+    def do_OPTIONS(self):           
+        self.send_response(200, "ok")
+        self.send_header('Access-Control-Allow-Origin', self.headers['origin'])
+        self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-type')
+        
+        self.end_headers()
  
     def do_GET(self):
         """
@@ -50,23 +59,27 @@ class MyHTTPHandler(BaseHTTPRequestHandler):
         # log requests
         #print(self.path)
         #print(time.asctime(), '%s: %s' % (self.command, self.path), 'more to log???') 
-
+        
         if(self.path == "/"):
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
             with open('index.html', 'rb') as f:
                 self.wfile.write(f.read())
+
+        """
         if(self.path == "/api/v1/dataFromFile"):
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.send_header('Access-Control-Allow-Origin', '*')
+            #self.send_header('Access-Control-Allow-Origin', self.headers['origin'])
             self.end_headers()
+            print(self.headers)
             #self.wfile.write(b"test")  #body zurueckschicken
 
             
             self.wfile.write(get_graph())
-
+        """
     def do_POST(self):
         """
         definiert den Umgang mit POST Requests
@@ -77,13 +90,19 @@ class MyHTTPHandler(BaseHTTPRequestHandler):
             #if (self.headers['Content-type'].split(";")[0] != "application/x-turtle"): #prueft Header auf Standart von Gerbil
                 #self.send_error(415, "Fehler im Header: Content-type")
                 #return
-            content_len = int(self.headers['Content-Length'])
+
+            ### POST Request Header ### 
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', self.headers['origin'])
+            self.end_headers()
 
             # get body from request
+            content_len = int(self.headers['Content-Length'])
             body = self.rfile.read(content_len) 
 
-            # convert str to list 
-            response = json.loads(str(body, encoding='utf-8'))
+            # convert body to list 
+            data = json.loads(str(body, encoding='utf-8'))
             #print(data)
 
             """
@@ -97,18 +116,16 @@ class MyHTTPHandler(BaseHTTPRequestHandler):
                     print("File ", filename, " saved")
             """
 
-            name = get_graph(response)
+            ## get new graph
+            data = get_graph(data)
 
-            ### POST Request beantworten ### 
-            self.send_response(200)
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
+            
             #print(type(data))
 
             #data = json.dumps(data)
             #print(type(data))
 
-            self.wfile.write(name)  #body zurueckschicken
+            self.wfile.write(data)  #body zurueckschicken
 
         return
  
