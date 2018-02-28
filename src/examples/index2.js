@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import graph from '../mock/graph'
+//import graph from '../mock/graph'
 import './stlye.css'
 
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/
@@ -83,11 +83,18 @@ function refreshData() {
     refreshButton.innerText = "loading"
     let data = nodes.map((node) => {
         let obj = {
-            x: node.fx,
-            y: node.fy,
+            x: (node.fx - width/2)*25/width,
+            y: (node.fy - height/2)*25/height,
             modified: node.modified,
-            index: node.index
+            dragged: node.dragged,
+            index: node.index,
+            sx: node.sx,
+            sy: node.sy
         }
+        //if(obj.x !== node.sx && !obj.modified) {
+            ///console.log(obj)
+            //console.log(node)
+        //}
         return obj
     })
     //
@@ -117,15 +124,19 @@ let height = window.innerHeight
 let svg = d3.select('svg')
 svg.attr('width', width).attr('height', height)//.attr("viewport", '250 250 20 20')
 
-//add zoom capabilities
-let zoom_handler = d3.zoom()
-    .on("zoom", zoom_actions);
-
-zoom_handler(svg);
 
 function zoom_actions(){
     g.attr("transform", d3.event.transform)
 }
+
+//add zoom capabilities
+let zoom_handler = d3.zoom()
+    .on("zoom", zoom_actions)
+
+
+zoom_handler(svg);
+
+svg.on('dblclick.zoom', null)  // disable zoom behavior
 
 //add encompassing group for the zoom
 let g = svg.append("g")
@@ -193,6 +204,9 @@ function run(data) {
         //node.fx = node.x*50 + 700
         //node.x = node.x*50 + 700 // 20fache
         node.modified = false
+        node.dragged = false
+        node.sx = node.x
+        node.sy = node.y
         node.fx = node.x*width/25 + width/2 // 20fache
         node.fy = node.y*height/25 + height/2  // 20fache
 
@@ -209,15 +223,16 @@ function run(data) {
         //console.log(node)
         return links.reduce((neighbors, link) => {
                 //console.log(link)
-                if (link.target === node) {
+                //if (link.target === node) {
                     //console.log("target")
                     //console.log(node)
                     //console.log(link.target)
-                    link.source.value = link.value
-                    neighbors.push(link.source)
+                    //link.source.value = link.value
+                    //neighbors.push(link.source)
                     //neighbors.push(nodes.find(n => n.id === link.source.id))
                     //neighbors.push(link.source.id)
-                } else if (link.source === node) {
+                //} else
+                    if (link.source === node) {
                     link.target.value = link.value
                     //console.log("source")
                     //neighbors.push(nodes.find(n => n.id === link.target.id))
@@ -240,8 +255,8 @@ function run(data) {
 //we're going to add a charge to each node
 //also going to add a centering force
     simulation
-        .force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
-        .force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
+        //.force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
+        //.force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
 
 
 //Create the link force
@@ -340,8 +355,10 @@ function run(data) {
             console.log("in drag")
             console.log(neighbors)
             nodeElements.attr('fill',  function (node) { return getNodeColor(node, neighbors) })
+
             //node.fx = node.x
             //node.fy = node.y
+            node.dragged = true
             node.startX = node.fx
             node.startY = node.fy
             //console.log(node)
@@ -373,7 +390,7 @@ function run(data) {
         }).on('end', function (node) {
             nodeElements.attr('fill', function (node) { return getNodeColor(node) })
             if (!d3.event.active) {
-                simulation.alphaTarget(0)
+                simulation.restart()
             }
             //node.fx = d3.event.x
             //node.fy = d3.event.y
@@ -382,4 +399,28 @@ function run(data) {
 
 //apply the drag_handler to our nodes
     dragDrop(nodeElements);
+
+    nodeElements.on("dblclick",function(node){
+        console.log("dbclick")
+        neighbors = getNeighbors(node)
+
+        neighbors.map(n => {
+            //console.log(n.value)
+            // weighted
+            //const dXw = dX/n.value
+            //const dYw = dY/n.value
+            //console.log({dXw, dYw})
+            if(n.modified) n.modified = false
+            if(n.dragged) n.dragged = false
+            n.fx = n.sx*width/25 + width/2 // 20fache
+            n.fy = n.sy*height/25 + height/2 // 20fache
+        })
+
+        if(node.dragged) node.dragged = false
+        if(node.modified) node.modified = false
+        node.fx = node.sx*width/25 + width/2 // 20fache
+        node.fy = node.sy*height/25 + height/2 // 20fache
+        console.log(node)
+        simulation.restart()
+    });
 }

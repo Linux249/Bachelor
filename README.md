@@ -84,5 +84,48 @@ FDG links
 9. Curated list of awesome Canvas examples https://github.com/raphamorim/awesome-canvas
 10. Using React with canvas element https://blog.lavrton.com/using-react-with-html5-canvas-871d07d8d753
 11. Many 3D/Orbit FDG https://bl.ocks.org/micahstubbs/a9eb7847c56c4c844d36cfbc5075be73
-12. A-Z FDG http://www.coppelia.io/2014/07/an-a-to-z-of-extra-features-for-the-d3-force-layout/
+12. (P) Graph Layout by t-SNE http://www2.cs.arizona.edu/~kobourov/tsne-eurovis17.pdf
 13. Move Groups + store example: http://jsfiddle.net/mbgw2ooc/2/
+
+d3-force:
+- Doku https://github.com/d3/d3-force
+- Force Dragging III https://bl.ocks.org/mbostock/ad70335eeef6d167bc36fd3c04378048
+- Understand FDG http://www.puzzlr.org/force-graphs-with-d3/
+- A-Z FDG http://www.coppelia.io/2014/07/an-a-to-z-of-extra-features-for-the-d3-force-layout/
+- Force examples: https://bl.ocks.org/sathomas + https://gist.github.com/sathomas/1ca23ee9588580d768aa
+- Modifying a Force Layout https://bl.ocks.org/mbostock/1095795
+- interactiv FDG https://medium.com/ninjaconcept/interactive-dynamic-force-directed-graphs-with-d3-da720c6d7811
+- good Class example http://jsfiddle.net/mbgw2ooc/2/
+ 
+TODO:
+- alpha überarbeiten
+- - refresh
+- force layout raus nehmen
+- zoom/d&d mit d3 behalten? 
+- vue + d3 
+- python env installieren 
+- google tool/js anschauen
+
+Ideas: 
+- Force layout benutzen sinnvoll? alternativen zu tsne googlen, da war was mimt Barnes-Hut, was auch in 'charge' benutzt wird http://www.puzzlr.org/force-directed-graph-charge-forces/
+
+DONE:
+23.02.:
+- in d3-force einarbeiten
+- 
+
+
+26.02.
+
+27.02.
+- python backend 
+- 
+
+28.02.
+- clean up
+- update graph: https://github.com/ninjaconcept/d3-force-directed-graph/blob/master/code/index.js
+- classes http://jsfiddle.net/mbgw2ooc/2/
+- start Werte zurück geben
+- welche Knoten wurden verschoben, welche folgten nur
+
+
