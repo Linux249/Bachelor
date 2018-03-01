@@ -1,5 +1,6 @@
 import * as d3 from 'd3'
-import graph from './mock/graphSmall'
+//import graph from './mock/graphSmall'
+import graph from './mock/graphMiddle'
 import './stlye.css'
 import getNodeColor from './util/getNodeColor'
 import getNeighbors from './util/getNeighbors'

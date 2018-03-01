@@ -3,1605 +3,1605 @@ export default {
     'graph': {'name': 'Artist Relations'},
     'nodes': [
         {
-        'image name': 'vincent-van-gogh_sower-1888-1',
-        'color': 'magenta',
-        'y': -11.679933,
-        'x': -1.2364955,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-bass-rock-for-the-provincial-antiquities-of-scotland',
-        'color': 'yellow',
-        'y': -4.3107944,
-        'x': 5.371901,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-descent-from-the-cross-by-torchlight-1654',
-        'color': 'lime',
-        'y': 5.8075552,
-        'x': -1.6942906,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_cliff-at-grainval-near-fecamp',
-        'color': 'cyan',
-        'y': -10.629107,
-        'x': -2.3567722,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_cypresses-1889-2',
-        'color': 'magenta',
-        'y': 2.8836176,
-        'x': -1.6800337,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_tabley-the-seat-of-sir-j-f-leicester-bt-windy-day',
-        'color': 'yellow',
-        'y': -3.159019,
-        'x': 8.2902088,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_morning-on-the-seine-in-the-rain-1898',
-        'color': 'cyan',
-        'y': -6.2842855,
-        'x': -1.0714879,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_water-lilies-1899-1',
-        'color': 'cyan',
-        'y': -5.0472631,
-        'x': -3.8315399,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_orphan-man-with-top-hat-holding-cup-1882',
-        'color': 'magenta',
-        'y': 10.355374,
-        'x': -1.2511772,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_a-fishing-boat-at-sea-1888',
-        'color': 'magenta',
-        'y': 1.0824034,
-        'x': -5.9450507,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_camille-on-the-beach-1871',
-        'color': 'cyan',
-        'y': -6.8960958,
-        'x': 0.94326264,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_two-pinetrees-1889',
-        'color': 'magenta',
-        'y': 11.538344,
-        'x': 0.53144103,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_women-mending-nets-in-the-dunes-1882',
-        'color': 'magenta',
-        'y': -5.86973,
-        'x': 0.48989967,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_holy-family-1640',
-        'color': 'lime',
-        'y': 3.1780097,
-        'x': 6.4383597,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_port-d-amount-etretat',
-        'color': 'cyan',
-        'y': -11.240829,
-        'x': 0.42366832,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_a-peasant-carrying-milk-pales-1650',
-        'color': 'lime',
-        'y': 3.5129199,
-        'x': -2.3374109,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_venus-in-a-top-hat',
-        'color': 'magenta',
-        'y': 10.444845,
-        'x': -4.0379643,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_peasant-man-and-woman-planting-potatoes-1885-1',
-        'color': 'magenta',
-        'y': -7.5502205,
-        'x': 7.1618614,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-yellow-irises-1917',
-        'color': 'cyan',
-        'y': -5.642724,
-        'x': -3.7162035,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_peasant-woman-stooping-with-spade-possibly-digging-up-carrots',
-        'color': 'magenta',
-        'y': 9.5128794,
-        'x': -3.6176507,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_woman-sewing-1881',
-        'color': 'magenta',
-        'y': 6.9373322,
-        'x': -1.5088598,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_couple-dancing-1885',
-        'color': 'magenta',
-        'y': 4.3654246,
-        'x': -7.5239244,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_a-digger-1881',
-        'color': 'magenta',
-        'y': 0.3465164,
-        'x': -0.34380609,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_enclosed-field-with-a-sower-in-the-rain-1889',
-        'color': 'magenta',
-        'y': 1.4156773,
-        'x': -5.5613265,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_woman-with-white-bonnet-sien-s-mother-1882',
-        'color': 'magenta',
-        'y': 5.8538122,
-        'x': 2.454766,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_weeping-willow-giverny-1922',
-        'color': 'cyan',
-        'y': -5.2546172,
-        'x': -2.1114132,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_hand-1885-1',
-        'color': 'magenta',
-        'y': 8.8216276,
-        'x': 0.48179233,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_rest-work-after-millet-1890',
-        'color': 'magenta',
-        'y': -13.527118,
-        'x': -1.3291038,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-philosopher',
-        'color': 'lime',
-        'y': 5.215354,
-        'x': 5.7510681,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_windmill-on-montmartre-1886',
-        'color': 'magenta',
-        'y': -8.6884279,
-        'x': -7.7981663,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_sketches-of-a-hen-and-a-cock-1890',
-        'color': 'magenta',
-        'y': 11.078636,
-        'x': 0.073183343,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_lane-with-trees-and-one-figure-1884',
-        'color': 'magenta',
-        'y': 3.5046668,
-        'x': -4.5959473,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_the-plough-and-the-harrow-after-millet-1890',
-        'color': 'magenta',
-        'y': -9.2349577,
-        'x': -7.6309075,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-shell-conus-marmoreus-1650-1',
-        'color': 'lime',
-        'y': 4.5138617,
-        'x': 0.24152079,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-beach-and-the-falaise-d-amont',
-        'color': 'cyan',
-        'y': -10.32785,
-        'x': -1.9912236,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_peasant-girl-half-figure',
-        'color': 'magenta',
-        'y': 9.5071106,
-        'x': -0.70839065,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_vicarage-at-nuenen-1884',
-        'color': 'magenta',
-        'y': 0.48271957,
-        'x': -3.2907002,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_peasant-man-and-woman-digging-1885',
-        'color': 'magenta',
-        'y': 9.0366402,
-        'x': -1.0352037,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_portrait-of-floris-soop-1654',
-        'color': 'lime',
-        'y': 4.3483062,
-        'x': 6.5149279,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_atelier',
-        'color': 'yellow',
-        'y': -7.1785178,
-        'x': 4.912138,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_peasant-woman-with-shawl-over-her-head-seen-from-the-back-1885',
-        'color': 'magenta',
-        'y': 10.372828,
-        'x': -2.3585951,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_a-public-garden-with-people-walking-in-the-rain-1886',
-        'color': 'magenta',
-        'y': 8.9307489,
-        'x': -5.0871038,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_haystacks-overcast-day',
-        'color': 'cyan',
-        'y': -12.261508,
-        'x': -4.3874793,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_avenue-of-poplars-1884',
-        'color': 'magenta',
-        'y': 3.0261335,
-        'x': -5.3119407,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-fjord-near-christiania',
-        'color': 'cyan',
-        'y': -10.604295,
-        'x': -1.0930033,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_two-old-men-disputing',
-        'color': 'lime',
-        'y': 6.0044279,
-        'x': 9.3862944,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-studio-boat-1876',
-        'color': 'cyan',
-        'y': -6.8459969,
-        'x': -3.3653533,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_miners-women-carrying-sacks-the-bearers-of-the-burden-1881',
-        'color': 'magenta',
-        'y': 6.1359553,
-        'x': -0.52812189,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_self-portrait-as-an-artist-1888',
-        'color': 'magenta',
-        'y': -12.867712,
-        'x': -3.1203663,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_sacrifice-of-manoah',
-        'color': 'lime',
-        'y': 3.6422241,
-        'x': 5.2847748,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_sea-study',
-        'color': 'cyan',
-        'y': -10.528241,
-        'x': -0.61140406,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_water-lilies-1899-2',
-        'color': 'cyan',
-        'y': -4.4886103,
-        'x': -4.3401308,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_the-gully-peiroulets-1889-1',
-        'color': 'magenta',
-        'y': -10.07112,
-        'x': -8.0317163,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-railway-bridge-at-argenteuil',
-        'color': 'cyan',
-        'y': -8.6280832,
-        'x': -0.32734817,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_small-gray-landscape-a-house-and-trees-beside-a-pool-1640',
-        'color': 'lime',
-        'y': 2.5304658,
-        'x': -3.5316565,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_donkey-and-cart',
-        'color': 'magenta',
-        'y': 0.68420362,
-        'x': 0.66837406,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_st-jerome-kneeling-in-prayer-looking-down-1635',
-        'color': 'lime',
-        'y': 3.8745427,
-        'x': -0.98640901,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_oat-and-poppy-field',
-        'color': 'cyan',
-        'y': -8.2382221,
-        'x': -2.2785816,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_old-man-in-a-tail-coat-1882',
-        'color': 'magenta',
-        'y': 11.550277,
-        'x': -1.7201382,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_pollard-willows-1889',
-        'color': 'magenta',
-        'y': -10.947882,
-        'x': -7.7252645,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_woman-by-the-fireplace-1885',
-        'color': 'magenta',
-        'y': 4.3050981,
-        'x': -4.5258946,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_portrait-of-madame-gaudibert',
-        'color': 'cyan',
-        'y': -3.7756536,
-        'x': 0.58765244,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_poplars-on-the-banks-of-the-epte-1891',
-        'color': 'cyan',
-        'y': -8.3810902,
-        'x': -3.8270459,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-big-blue-meditarranean-at-antibes',
-        'color': 'cyan',
-        'y': -9.2733698,
-        'x': -1.5611427,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_skull-1',
-        'color': 'magenta',
-        'y': -7.3802166,
-        'x': -7.0326452,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_a-pair-of-shoes-1887-1',
-        'color': 'magenta',
-        'y': 1.3902304,
-        'x': 3.5427282,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_soup-distribution-in-a-public-soup-kitchen-1883',
-        'color': 'magenta',
-        'y': 8.3042765,
-        'x': -6.3759589,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_vetheuil-l-inondation',
-        'color': 'cyan',
-        'y': -0.4959608,
-        'x': -1.7224131,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_springtime-1',
-        'color': 'cyan',
-        'y': -6.9369493,
-        'x': -1.8361185,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_vetheuil-flowering-plum-trees',
-        'color': 'cyan',
-        'y': -6.5954118,
-        'x': -1.5334138,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-baptism-of-the-eunuch-1626',
-        'color': 'lime',
-        'y': 0.82995909,
-        'x': 10.271832,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_peasants-planting-potatoes-1884',
-        'color': 'magenta',
-        'y': 2.9209285,
-        'x': 4.0284252,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_woman-churning-butter-1881',
-        'color': 'magenta',
-        'y': 8.0235929,
-        'x': -2.0763192,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_orphan-man-holding-top-hat-in-his-hand-1882-1',
-        'color': 'magenta',
-        'y': 10.526648,
-        'x': -1.5133206,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_edge-of-the-cliff-pourville',
-        'color': 'cyan',
-        'y': -9.1654596,
-        'x': -2.2338219,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_self-portrait-with-dark-felt-hat-at-the-easel-1886',
-        'color': 'magenta',
-        'y': 2.0741363,
-        'x': 7.2267799,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_grove-of-olive-trees-in-bordighera',
-        'color': 'cyan',
-        'y': -10.843356,
-        'x': -4.1369061,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_swift-1887',
-        'color': 'magenta',
-        'y': 7.8926682,
-        'x': 0.77919424,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_the-entrance-hall-of-saint-paul-hospital-1889',
-        'color': 'magenta',
-        'y': -7.4249811,
-        'x': -8.3195381,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_warkworth-castle-northumberland-thunder-storm-approaching-at-sun-set',
-        'color': 'yellow',
-        'y': -2.3028784,
-        'x': 11.910031,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_landscape-near-montmajour-with-train-1888',
-        'color': 'magenta',
-        'y': 1.8918455,
-        'x': -2.1311345,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_vase-with-zinnias-1886',
-        'color': 'magenta',
-        'y': -2.7280347,
-        'x': -1.3980776,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_torso-of-venus-1887-2',
-        'color': 'magenta',
-        'y': 9.6087523,
-        'x': 0.596573,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_evangelist-writing',
-        'color': 'lime',
-        'y': 4.0832705,
-        'x': 5.637032,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_the-sower-sower-with-setting-sun-1888',
-        'color': 'magenta',
-        'y': -12.259904,
-        'x': -1.4173616,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_a-sower-and-a-man-with-a-spade-1890',
-        'color': 'magenta',
-        'y': 9.4281979,
-        'x': -3.8329794,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_port-donnant-belle-ile',
-        'color': 'cyan',
-        'y': -11.645752,
-        'x': -3.2909691,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_autumn-landscape-at-dusk-1885',
-        'color': 'magenta',
-        'y': 0.26071286,
-        'x': 7.4811454,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_water-lily-pond-1919-1',
-        'color': 'cyan',
-        'y': -5.6321759,
-        'x': -4.9406681,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_the-public-soup-kitchen-1883-1',
-        'color': 'magenta',
-        'y': 1.1431596,
-        'x': -4.1682472,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'vincent-van-gogh_vase-with-carnations-and-bottle-1886',
-        'color': 'magenta',
-        'y': -2.4241846,
-        'x': -0.76866496,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_charing-cross-bridge-fog-on-the-themes',
-        'color': 'cyan',
-        'y': -1.0549951,
-        'x': 2.0064096,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_portrait-of-maerten-soolmans-1634',
-        'color': 'lime',
-        'y': 5.4191308,
-        'x': 7.6524668,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_two-recumbent-nude',
-        'color': 'yellow',
-        'y': 2.3391695,
-        'x': 2.0312757,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_virgin-and-child-in-the-clouds-1641',
-        'color': 'lime',
-        'y': 4.7382751,
-        'x': -0.88197684,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_in-the-norvegienne-boat-at-giverny',
-        'color': 'cyan',
-        'y': -9.1426163,
-        'x': 1.1536368,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_yacht-approaching-the-coast',
-        'color': 'yellow',
-        'y': -2.8998575,
-        'x': 3.4255843,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_morning-on-the-seine',
-        'color': 'cyan',
-        'y': -9.4651775,
-        'x': -3.9537873,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_vetheuil-the-small-arm-of-the-seine',
-        'color': 'cyan',
-        'y': -8.5966225,
-        'x': -4.5719204,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_on-the-cliff-at-fecamp',
-        'color': 'cyan',
-        'y': -7.6273513,
-        'x': -2.1177397,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_a-village-with-a-square-tower-1650',
-        'color': 'lime',
-        'y': 3.5969174,
-        'x': -3.0112877,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-church-at-varengeville-1882',
-        'color': 'cyan',
-        'y': -10.192608,
-        'x': -3.6574585,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_weeping-willow-4-1919',
-        'color': 'cyan',
-        'y': -5.4029202,
-        'x': -1.9915857,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_view-to-the-plain-of-argenteuil',
-        'color': 'cyan',
-        'y': -7.5237727,
-        'x': -0.95985717,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-banks-of-the-seine-at-the-argenteuil-bridge',
-        'color': 'cyan',
-        'y': -8.4746132,
-        'x': -3.078697,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_water-lilies-right-half-1920',
-        'color': 'cyan',
-        'y': -6.7652564,
-        'x': -4.5391941,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_king-david-at-prayer-1652',
-        'color': 'lime',
-        'y': 5.4247599,
-        'x': -2.2080641,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-jetty-at-le-havre-1868',
-        'color': 'cyan',
-        'y': -7.9286318,
-        'x': 2.6520605,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_a-bearded-man-in-a-cap-1657',
-        'color': 'lime',
-        'y': 4.038476,
-        'x': 5.4186354,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_apple-trees-near-vetheuil',
-        'color': 'cyan',
-        'y': -7.3641644,
-        'x': -2.1599066,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_road-near-giverny-02',
-        'color': 'cyan',
-        'y': -10.295305,
-        'x': -4.9117899,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_st-jerome-praying-1632',
-        'color': 'lime',
-        'y': 3.8548508,
-        'x': -1.2875522,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_path-under-the-rose-trellises-giverny-1922',
-        'color': 'cyan',
-        'y': -5.1531835,
-        'x': -1.7897867,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_vetheuil-in-winter',
-        'color': 'cyan',
-        'y': -9.140583,
-        'x': -5.6057882,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_chrysanthemums-1897-1',
-        'color': 'cyan',
-        'y': -11.215421,
-        'x': -5.5729761,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_valley-of-the-brook-kedron',
-        'color': 'yellow',
-        'y': -4.0176272,
-        'x': 6.5145459,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-blind-tobit-1651',
-        'color': 'lime',
-        'y': 7.1825495,
-        'x': -4.601027,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_angel-departing-from-the-family-of-tobias-1641',
-        'color': 'lime',
-        'y': 5.3510046,
-        'x': -3.7966139,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_fisherman-s-house-in-petit-ailly',
-        'color': 'cyan',
-        'y': -10.375846,
-        'x': -2.9323184,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_tobit-and-anna-with-the-kid-1645',
-        'color': 'lime',
-        'y': 1.765223,
-        'x': 6.6923451,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_houses-of-parliament-at-sunset',
-        'color': 'cyan',
-        'y': -1.1716715,
-        'x': 2.2418041,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_rouen-cathedral-study-of-the-portal',
-        'color': 'cyan',
-        'y': -5.4602013,
-        'x': -6.6193156,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_saskia-looking-out-of-a-window-1635',
-        'color': 'lime',
-        'y': 8.2269173,
-        'x': -2.7111068,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-valley-of-sasso-sunshine',
-        'color': 'cyan',
-        'y': -7.5817394,
-        'x': -3.5525963,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_grainstack-thaw-sunset',
-        'color': 'cyan',
-        'y': -8.8015795,
-        'x': -1.788946,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_camille-monet-in-the-garden-at-the-house-in-argenteuil',
-        'color': 'cyan',
-        'y': -8.8808165,
-        'x': -3.3490059,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_waterloo-bridge-3-1901',
-        'color': 'cyan',
-        'y': -8.0833473,
-        'x': -5.1279011,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-vale-of-ashburnham',
-        'color': 'yellow',
-        'y': -1.1930839,
-        'x': 6.5683136,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_water-lilies-1907',
-        'color': 'cyan',
-        'y': -5.3628507,
-        'x': -5.28023,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'claude-monet_the-undergrowth-in-the-forest-of-saint-germain',
-        'color': 'cyan',
-        'y': -9.1506758,
-        'x': -3.2878926,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_seated-beggar-and-his-dog-1629',
-        'color': 'lime',
-        'y': 4.6514001,
-        'x': -2.5646141,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_self-portrait-at-an-early-age-1629',
-        'color': 'lime',
-        'y': 6.4347649,
-        'x': 5.5105834,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_girl-in-the-window-1645',
-        'color': 'lime',
-        'y': 6.9087701,
-        'x': 8.7496767,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_bust-of-an-old-man-with-a-beret-1631',
-        'color': 'lime',
-        'y': 6.1602206,
-        'x': 5.1850057,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_beggar-man-and-woman-1631',
-        'color': 'lime',
-        'y': 5.5224433,
-        'x': -5.2243338,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_rome-from-monte-testaccio',
-        'color': 'yellow',
-        'y': -5.8049536,
-        'x': 6.0710359,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_three-oriental-figures-jacob-and-laban-1641',
-        'color': 'lime',
-        'y': 6.280931,
-        'x': -3.714366,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_heriot-s-hospital-edinburgh',
-        'color': 'yellow',
-        'y': -5.7406421,
-        'x': 7.70293,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-holy-family-1645',
-        'color': 'lime',
-        'y': 2.9492209,
-        'x': 8.6373224,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_an-old-woman-sleeping-1635',
-        'color': 'lime',
-        'y': 4.5563459,
-        'x': -2.1209309,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-shell-conus-marmoreus-1650',
-        'color': 'lime',
-        'y': 4.545414,
-        'x': 0.70396614,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_portrait-of-mother-of-rembrandt',
-        'color': 'lime',
-        'y': 5.2192645,
-        'x': 4.8790569,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_stormy-landscape',
-        'color': 'lime',
-        'y': 0.30227226,
-        'x': 5.5336804,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_christ-crowned-with-thorns',
-        'color': 'lime',
-        'y': 5.8399029,
-        'x': -0.89294231,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_jacob-shown-the-bloodstained-coat-of-joseph-1657',
-        'color': 'lime',
-        'y': 5.3663201,
-        'x': -7.7206531,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_the-rich-man-from-the-parable-1627',
-        'color': 'lime',
-        'y': 3.2774811,
-        'x': 9.1472569,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_self-portrait-with-beret-1634',
-        'color': 'lime',
-        'y': 6.9771791,
-        'x': 5.4250193,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_christ-preaching-1652',
-        'color': 'lime',
-        'y': 6.3407807,
-        'x': -2.6938517,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_john-the-baptist-preaching-1635',
-        'color': 'lime',
-        'y': 1.4298512,
-        'x': 6.6287656,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_old-man-seated-in-an-armchair-full-length',
-        'color': 'lime',
-        'y': 2.9872038,
-        'x': -0.39081335,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_christ-on-the-cross-1631',
-        'color': 'lime',
-        'y': 4.6424541,
-        'x': 7.8968315,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_esther-before-ahasuerus-1660',
-        'color': 'lime',
-        'y': 5.7564206,
-        'x': -6.5945201,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_landscape-with-an-obelisk-1650',
-        'color': 'lime',
-        'y': 3.6665583,
-        'x': -3.0190916,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_child-in-a-tantrum',
-        'color': 'lime',
-        'y': 7.4449635,
-        'x': -3.8834748,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_a-man-seated-at-a-table-covered-with-books-1636',
-        'color': 'lime',
-        'y': 4.7086105,
-        'x': -7.5351238,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_portrait-of-a-bearded-man-in-a-wide-brimmed-hat-1633',
-        'color': 'lime',
-        'y': 7.3470483,
-        'x': 8.6475687,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_man-sharpening-a-quill-1632',
-        'color': 'lime',
-        'y': 5.9352727,
-        'x': 7.2534146,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-chapter-house-salisbury-chathedral',
-        'color': 'yellow',
-        'y': -5.8335648,
-        'x': 10.637521,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_portrait-of-margeretha-de-geer-1661',
-        'color': 'lime',
-        'y': 7.3633966,
-        'x': 7.416676,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_st-francis-beneath-a-tree-praying-1657',
-        'color': 'lime',
-        'y': 3.5252922,
-        'x': -2.2235658,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'rembrandt_abraham-dismissing-hagar-1637',
-        'color': 'lime',
-        'y': 5.7540245,
-        'x': -3.172807,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_landscape-with-a-river-and-a-bay-in-the-background',
-        'color': 'yellow',
-        'y': -0.80813801,
-        'x': 4.0112152,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-devil-s-bridge-st-gothard',
-        'color': 'yellow',
-        'y': -0.51633281,
-        'x': 4.9648151,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_rome-the-colosseum',
-        'color': 'yellow',
-        'y': -4.041101,
-        'x': 11.447694,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_keyes-mill',
-        'color': 'yellow',
-        'y': -1.914516,
-        'x': 6.1173773,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_what-you-will-1822',
-        'color': 'yellow',
-        'y': -0.65023416,
-        'x': 7.3043661,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-morning-after-the-deluge',
-        'color': 'yellow',
-        'y': -1.8151824,
-        'x': 4.1674943,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_pendennis-castle-cornwall-scene-after-a-wreck',
-        'color': 'yellow',
-        'y': -5.2930427,
-        'x': 5.6619625,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_raby-castle-residence-of-the-earl-of-darlington',
-        'color': 'yellow',
-        'y': -0.45807222,
-        'x': 5.3837714,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_two-women-and-a-letter',
-        'color': 'yellow',
-        'y': 1.3737351,
-        'x': 5.0389085,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_ulysses-deriding-polyphemus-1829',
-        'color': 'yellow',
-        'y': -2.3479321,
-        'x': 6.8788662,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_stamford',
-        'color': 'yellow',
-        'y': -3.3096981,
-        'x': 6.76647,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_transept-of-ewenny-priory-glamorganshire',
-        'color': 'yellow',
-        'y': -6.3722329,
-        'x': 10.532936,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_sun-rising-through-vagour-fishermen-cleaning-and-sellilng-fish',
-        'color': 'yellow',
-        'y': -2.4972978,
-        'x': 8.4983559,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_rome-from-the-vatican',
-        'color': 'yellow',
-        'y': -5.3678627,
-        'x': 10.580448,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_welsh-bridge-at-shrewsbury',
-        'color': 'yellow',
-        'y': -4.9685822,
-        'x': 8.6464262,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_rocky-bay-with-figures',
-        'color': 'yellow',
-        'y': -0.47985643,
-        'x': 3.3707659,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_pope-s-villa-at-twickenham',
-        'color': 'yellow',
-        'y': -1.0465147,
-        'x': 7.1192808,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_petworth-park-tillington-church-in-the-distance',
-        'color': 'yellow',
-        'y': -1.4306115,
-        'x': 5.0540404,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_conway-castle',
-        'color': 'yellow',
-        'y': -4.2486367,
-        'x': 7.3362365,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_interior-of-salisbury-cathedral',
-        'color': 'yellow',
-        'y': -5.6161737,
-        'x': 10.571585,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_longship-lighthouse-lands-end',
-        'color': 'yellow',
-        'y': -3.5706911,
-        'x': 3.2876194,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_calais-pier-with-french-poissards-preparing-for-sea-an-english-packeet-arriving',
-        'color': 'yellow',
-        'y': -1.9002466,
-        'x': 8.007534,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_ploughing-up-turnips-near-slough',
-        'color': 'yellow',
-        'y': -1.3673836,
-        'x': 7.4671993,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_ariccia-sunset',
-        'color': 'yellow',
-        'y': -0.86925614,
-        'x': 9.3866062,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_mountain-stream-coniston',
-        'color': 'yellow',
-        'y': 0.39505094,
-        'x': 4.7703238,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_passage-of-mount-cenis',
-        'color': 'yellow',
-        'y': -3.0636668,
-        'x': 5.9605308,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_venice-looking-east-from-the-guidecca-sunrise',
-        'color': 'yellow',
-        'y': -2.6222937,
-        'x': 1.9776767,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_waves-breaking-on-a-beach-1845',
-        'color': 'yellow',
-        'y': 0.066535003,
-        'x': 2.7345018,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-festival-of-the-opening-of-the-vintage-macon',
-        'color': 'yellow',
-        'y': -0.71354663,
-        'x': 9.0190315,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_self-portrait-1',
-        'color': 'yellow',
-        'y': 6.42623,
-        'x': 8.3744946,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_bridge-of-sighs-ducal-palace-and-custom-house-venice-canaletti-painting',
-        'color': 'yellow',
-        'y': -2.7918341,
-        'x': 11.280591,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_london',
-        'color': 'yellow',
-        'y': -2.7396786,
-        'x': 11.310465,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_rainbow',
-        'color': 'yellow',
-        'y': -2.1550887,
-        'x': 5.3109393,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_mont-blanc-from-fort-roch-val-d-aosta',
-        'color': 'yellow',
-        'y': -3.4791694,
-        'x': 5.464994,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_san-giorgio-maggiore-in-the-morning',
-        'color': 'yellow',
-        'y': -1.6559703,
-        'x': 1.637271,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_caligula-s-palace-and-bridge',
-        'color': 'yellow',
-        'y': -1.8149475,
-        'x': 10.332537,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_okehampton',
-        'color': 'yellow',
-        'y': -0.77158642,
-        'x': 5.9271111,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-brunig-pass-from-meringen-1848',
-        'color': 'yellow',
-        'y': -2.4234824,
-        'x': 4.5104756,
-        'fixed': true,
-        'size': 5
-    }, {
-        'image name':
-            'william-turner_the-burning-of-the-houses-of-parliament-2',
-        'color': 'yellow',
-        'y': -4.5112634,
-        'x': 3.3674757,
-        'fixed': true,
-        'size': 5
-    }],
+            'image name': 'vincent-van-gogh_sower-1888-1',
+            'color': 'magenta',
+            'y': -11.679933,
+            'x': -1.2364955,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-bass-rock-for-the-provincial-antiquities-of-scotland',
+            'color': 'yellow',
+            'y': -4.3107944,
+            'x': 5.371901,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-descent-from-the-cross-by-torchlight-1654',
+            'color': 'lime',
+            'y': 5.8075552,
+            'x': -1.6942906,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_cliff-at-grainval-near-fecamp',
+            'color': 'cyan',
+            'y': -10.629107,
+            'x': -2.3567722,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_cypresses-1889-2',
+            'color': 'magenta',
+            'y': 2.8836176,
+            'x': -1.6800337,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_tabley-the-seat-of-sir-j-f-leicester-bt-windy-day',
+            'color': 'yellow',
+            'y': -3.159019,
+            'x': 8.2902088,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_morning-on-the-seine-in-the-rain-1898',
+            'color': 'cyan',
+            'y': -6.2842855,
+            'x': -1.0714879,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_water-lilies-1899-1',
+            'color': 'cyan',
+            'y': -5.0472631,
+            'x': -3.8315399,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_orphan-man-with-top-hat-holding-cup-1882',
+            'color': 'magenta',
+            'y': 10.355374,
+            'x': -1.2511772,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_a-fishing-boat-at-sea-1888',
+            'color': 'magenta',
+            'y': 1.0824034,
+            'x': -5.9450507,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_camille-on-the-beach-1871',
+            'color': 'cyan',
+            'y': -6.8960958,
+            'x': 0.94326264,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_two-pinetrees-1889',
+            'color': 'magenta',
+            'y': 11.538344,
+            'x': 0.53144103,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_women-mending-nets-in-the-dunes-1882',
+            'color': 'magenta',
+            'y': -5.86973,
+            'x': 0.48989967,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_holy-family-1640',
+            'color': 'lime',
+            'y': 3.1780097,
+            'x': 6.4383597,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_port-d-amount-etretat',
+            'color': 'cyan',
+            'y': -11.240829,
+            'x': 0.42366832,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_a-peasant-carrying-milk-pales-1650',
+            'color': 'lime',
+            'y': 3.5129199,
+            'x': -2.3374109,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_venus-in-a-top-hat',
+            'color': 'magenta',
+            'y': 10.444845,
+            'x': -4.0379643,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_peasant-man-and-woman-planting-potatoes-1885-1',
+            'color': 'magenta',
+            'y': -7.5502205,
+            'x': 7.1618614,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-yellow-irises-1917',
+            'color': 'cyan',
+            'y': -5.642724,
+            'x': -3.7162035,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_peasant-woman-stooping-with-spade-possibly-digging-up-carrots',
+            'color': 'magenta',
+            'y': 9.5128794,
+            'x': -3.6176507,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_woman-sewing-1881',
+            'color': 'magenta',
+            'y': 6.9373322,
+            'x': -1.5088598,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_couple-dancing-1885',
+            'color': 'magenta',
+            'y': 4.3654246,
+            'x': -7.5239244,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_a-digger-1881',
+            'color': 'magenta',
+            'y': 0.3465164,
+            'x': -0.34380609,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_enclosed-field-with-a-sower-in-the-rain-1889',
+            'color': 'magenta',
+            'y': 1.4156773,
+            'x': -5.5613265,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_woman-with-white-bonnet-sien-s-mother-1882',
+            'color': 'magenta',
+            'y': 5.8538122,
+            'x': 2.454766,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_weeping-willow-giverny-1922',
+            'color': 'cyan',
+            'y': -5.2546172,
+            'x': -2.1114132,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_hand-1885-1',
+            'color': 'magenta',
+            'y': 8.8216276,
+            'x': 0.48179233,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_rest-work-after-millet-1890',
+            'color': 'magenta',
+            'y': -13.527118,
+            'x': -1.3291038,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-philosopher',
+            'color': 'lime',
+            'y': 5.215354,
+            'x': 5.7510681,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_windmill-on-montmartre-1886',
+            'color': 'magenta',
+            'y': -8.6884279,
+            'x': -7.7981663,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_sketches-of-a-hen-and-a-cock-1890',
+            'color': 'magenta',
+            'y': 11.078636,
+            'x': 0.073183343,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_lane-with-trees-and-one-figure-1884',
+            'color': 'magenta',
+            'y': 3.5046668,
+            'x': -4.5959473,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_the-plough-and-the-harrow-after-millet-1890',
+            'color': 'magenta',
+            'y': -9.2349577,
+            'x': -7.6309075,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-shell-conus-marmoreus-1650-1',
+            'color': 'lime',
+            'y': 4.5138617,
+            'x': 0.24152079,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-beach-and-the-falaise-d-amont',
+            'color': 'cyan',
+            'y': -10.32785,
+            'x': -1.9912236,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_peasant-girl-half-figure',
+            'color': 'magenta',
+            'y': 9.5071106,
+            'x': -0.70839065,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_vicarage-at-nuenen-1884',
+            'color': 'magenta',
+            'y': 0.48271957,
+            'x': -3.2907002,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_peasant-man-and-woman-digging-1885',
+            'color': 'magenta',
+            'y': 9.0366402,
+            'x': -1.0352037,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_portrait-of-floris-soop-1654',
+            'color': 'lime',
+            'y': 4.3483062,
+            'x': 6.5149279,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_atelier',
+            'color': 'yellow',
+            'y': -7.1785178,
+            'x': 4.912138,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_peasant-woman-with-shawl-over-her-head-seen-from-the-back-1885',
+            'color': 'magenta',
+            'y': 10.372828,
+            'x': -2.3585951,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_a-public-garden-with-people-walking-in-the-rain-1886',
+            'color': 'magenta',
+            'y': 8.9307489,
+            'x': -5.0871038,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_haystacks-overcast-day',
+            'color': 'cyan',
+            'y': -12.261508,
+            'x': -4.3874793,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_avenue-of-poplars-1884',
+            'color': 'magenta',
+            'y': 3.0261335,
+            'x': -5.3119407,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-fjord-near-christiania',
+            'color': 'cyan',
+            'y': -10.604295,
+            'x': -1.0930033,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_two-old-men-disputing',
+            'color': 'lime',
+            'y': 6.0044279,
+            'x': 9.3862944,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-studio-boat-1876',
+            'color': 'cyan',
+            'y': -6.8459969,
+            'x': -3.3653533,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_miners-women-carrying-sacks-the-bearers-of-the-burden-1881',
+            'color': 'magenta',
+            'y': 6.1359553,
+            'x': -0.52812189,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_self-portrait-as-an-artist-1888',
+            'color': 'magenta',
+            'y': -12.867712,
+            'x': -3.1203663,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_sacrifice-of-manoah',
+            'color': 'lime',
+            'y': 3.6422241,
+            'x': 5.2847748,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_sea-study',
+            'color': 'cyan',
+            'y': -10.528241,
+            'x': -0.61140406,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_water-lilies-1899-2',
+            'color': 'cyan',
+            'y': -4.4886103,
+            'x': -4.3401308,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_the-gully-peiroulets-1889-1',
+            'color': 'magenta',
+            'y': -10.07112,
+            'x': -8.0317163,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-railway-bridge-at-argenteuil',
+            'color': 'cyan',
+            'y': -8.6280832,
+            'x': -0.32734817,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_small-gray-landscape-a-house-and-trees-beside-a-pool-1640',
+            'color': 'lime',
+            'y': 2.5304658,
+            'x': -3.5316565,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_donkey-and-cart',
+            'color': 'magenta',
+            'y': 0.68420362,
+            'x': 0.66837406,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_st-jerome-kneeling-in-prayer-looking-down-1635',
+            'color': 'lime',
+            'y': 3.8745427,
+            'x': -0.98640901,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_oat-and-poppy-field',
+            'color': 'cyan',
+            'y': -8.2382221,
+            'x': -2.2785816,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_old-man-in-a-tail-coat-1882',
+            'color': 'magenta',
+            'y': 11.550277,
+            'x': -1.7201382,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_pollard-willows-1889',
+            'color': 'magenta',
+            'y': -10.947882,
+            'x': -7.7252645,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_woman-by-the-fireplace-1885',
+            'color': 'magenta',
+            'y': 4.3050981,
+            'x': -4.5258946,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_portrait-of-madame-gaudibert',
+            'color': 'cyan',
+            'y': -3.7756536,
+            'x': 0.58765244,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_poplars-on-the-banks-of-the-epte-1891',
+            'color': 'cyan',
+            'y': -8.3810902,
+            'x': -3.8270459,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-big-blue-meditarranean-at-antibes',
+            'color': 'cyan',
+            'y': -9.2733698,
+            'x': -1.5611427,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_skull-1',
+            'color': 'magenta',
+            'y': -7.3802166,
+            'x': -7.0326452,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_a-pair-of-shoes-1887-1',
+            'color': 'magenta',
+            'y': 1.3902304,
+            'x': 3.5427282,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_soup-distribution-in-a-public-soup-kitchen-1883',
+            'color': 'magenta',
+            'y': 8.3042765,
+            'x': -6.3759589,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_vetheuil-l-inondation',
+            'color': 'cyan',
+            'y': -0.4959608,
+            'x': -1.7224131,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_springtime-1',
+            'color': 'cyan',
+            'y': -6.9369493,
+            'x': -1.8361185,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_vetheuil-flowering-plum-trees',
+            'color': 'cyan',
+            'y': -6.5954118,
+            'x': -1.5334138,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-baptism-of-the-eunuch-1626',
+            'color': 'lime',
+            'y': 0.82995909,
+            'x': 10.271832,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_peasants-planting-potatoes-1884',
+            'color': 'magenta',
+            'y': 2.9209285,
+            'x': 4.0284252,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_woman-churning-butter-1881',
+            'color': 'magenta',
+            'y': 8.0235929,
+            'x': -2.0763192,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_orphan-man-holding-top-hat-in-his-hand-1882-1',
+            'color': 'magenta',
+            'y': 10.526648,
+            'x': -1.5133206,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_edge-of-the-cliff-pourville',
+            'color': 'cyan',
+            'y': -9.1654596,
+            'x': -2.2338219,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_self-portrait-with-dark-felt-hat-at-the-easel-1886',
+            'color': 'magenta',
+            'y': 2.0741363,
+            'x': 7.2267799,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_grove-of-olive-trees-in-bordighera',
+            'color': 'cyan',
+            'y': -10.843356,
+            'x': -4.1369061,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_swift-1887',
+            'color': 'magenta',
+            'y': 7.8926682,
+            'x': 0.77919424,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_the-entrance-hall-of-saint-paul-hospital-1889',
+            'color': 'magenta',
+            'y': -7.4249811,
+            'x': -8.3195381,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_warkworth-castle-northumberland-thunder-storm-approaching-at-sun-set',
+            'color': 'yellow',
+            'y': -2.3028784,
+            'x': 11.910031,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_landscape-near-montmajour-with-train-1888',
+            'color': 'magenta',
+            'y': 1.8918455,
+            'x': -2.1311345,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_vase-with-zinnias-1886',
+            'color': 'magenta',
+            'y': -2.7280347,
+            'x': -1.3980776,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_torso-of-venus-1887-2',
+            'color': 'magenta',
+            'y': 9.6087523,
+            'x': 0.596573,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_evangelist-writing',
+            'color': 'lime',
+            'y': 4.0832705,
+            'x': 5.637032,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_the-sower-sower-with-setting-sun-1888',
+            'color': 'magenta',
+            'y': -12.259904,
+            'x': -1.4173616,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_a-sower-and-a-man-with-a-spade-1890',
+            'color': 'magenta',
+            'y': 9.4281979,
+            'x': -3.8329794,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_port-donnant-belle-ile',
+            'color': 'cyan',
+            'y': -11.645752,
+            'x': -3.2909691,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_autumn-landscape-at-dusk-1885',
+            'color': 'magenta',
+            'y': 0.26071286,
+            'x': 7.4811454,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_water-lily-pond-1919-1',
+            'color': 'cyan',
+            'y': -5.6321759,
+            'x': -4.9406681,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_the-public-soup-kitchen-1883-1',
+            'color': 'magenta',
+            'y': 1.1431596,
+            'x': -4.1682472,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'vincent-van-gogh_vase-with-carnations-and-bottle-1886',
+            'color': 'magenta',
+            'y': -2.4241846,
+            'x': -0.76866496,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_charing-cross-bridge-fog-on-the-themes',
+            'color': 'cyan',
+            'y': -1.0549951,
+            'x': 2.0064096,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_portrait-of-maerten-soolmans-1634',
+            'color': 'lime',
+            'y': 5.4191308,
+            'x': 7.6524668,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_two-recumbent-nude',
+            'color': 'yellow',
+            'y': 2.3391695,
+            'x': 2.0312757,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_virgin-and-child-in-the-clouds-1641',
+            'color': 'lime',
+            'y': 4.7382751,
+            'x': -0.88197684,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_in-the-norvegienne-boat-at-giverny',
+            'color': 'cyan',
+            'y': -9.1426163,
+            'x': 1.1536368,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_yacht-approaching-the-coast',
+            'color': 'yellow',
+            'y': -2.8998575,
+            'x': 3.4255843,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_morning-on-the-seine',
+            'color': 'cyan',
+            'y': -9.4651775,
+            'x': -3.9537873,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_vetheuil-the-small-arm-of-the-seine',
+            'color': 'cyan',
+            'y': -8.5966225,
+            'x': -4.5719204,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_on-the-cliff-at-fecamp',
+            'color': 'cyan',
+            'y': -7.6273513,
+            'x': -2.1177397,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_a-village-with-a-square-tower-1650',
+            'color': 'lime',
+            'y': 3.5969174,
+            'x': -3.0112877,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-church-at-varengeville-1882',
+            'color': 'cyan',
+            'y': -10.192608,
+            'x': -3.6574585,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_weeping-willow-4-1919',
+            'color': 'cyan',
+            'y': -5.4029202,
+            'x': -1.9915857,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_view-to-the-plain-of-argenteuil',
+            'color': 'cyan',
+            'y': -7.5237727,
+            'x': -0.95985717,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-banks-of-the-seine-at-the-argenteuil-bridge',
+            'color': 'cyan',
+            'y': -8.4746132,
+            'x': -3.078697,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_water-lilies-right-half-1920',
+            'color': 'cyan',
+            'y': -6.7652564,
+            'x': -4.5391941,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_king-david-at-prayer-1652',
+            'color': 'lime',
+            'y': 5.4247599,
+            'x': -2.2080641,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-jetty-at-le-havre-1868',
+            'color': 'cyan',
+            'y': -7.9286318,
+            'x': 2.6520605,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_a-bearded-man-in-a-cap-1657',
+            'color': 'lime',
+            'y': 4.038476,
+            'x': 5.4186354,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_apple-trees-near-vetheuil',
+            'color': 'cyan',
+            'y': -7.3641644,
+            'x': -2.1599066,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_road-near-giverny-02',
+            'color': 'cyan',
+            'y': -10.295305,
+            'x': -4.9117899,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_st-jerome-praying-1632',
+            'color': 'lime',
+            'y': 3.8548508,
+            'x': -1.2875522,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_path-under-the-rose-trellises-giverny-1922',
+            'color': 'cyan',
+            'y': -5.1531835,
+            'x': -1.7897867,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_vetheuil-in-winter',
+            'color': 'cyan',
+            'y': -9.140583,
+            'x': -5.6057882,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_chrysanthemums-1897-1',
+            'color': 'cyan',
+            'y': -11.215421,
+            'x': -5.5729761,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_valley-of-the-brook-kedron',
+            'color': 'yellow',
+            'y': -4.0176272,
+            'x': 6.5145459,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-blind-tobit-1651',
+            'color': 'lime',
+            'y': 7.1825495,
+            'x': -4.601027,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_angel-departing-from-the-family-of-tobias-1641',
+            'color': 'lime',
+            'y': 5.3510046,
+            'x': -3.7966139,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_fisherman-s-house-in-petit-ailly',
+            'color': 'cyan',
+            'y': -10.375846,
+            'x': -2.9323184,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_tobit-and-anna-with-the-kid-1645',
+            'color': 'lime',
+            'y': 1.765223,
+            'x': 6.6923451,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_houses-of-parliament-at-sunset',
+            'color': 'cyan',
+            'y': -1.1716715,
+            'x': 2.2418041,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_rouen-cathedral-study-of-the-portal',
+            'color': 'cyan',
+            'y': -5.4602013,
+            'x': -6.6193156,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_saskia-looking-out-of-a-window-1635',
+            'color': 'lime',
+            'y': 8.2269173,
+            'x': -2.7111068,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-valley-of-sasso-sunshine',
+            'color': 'cyan',
+            'y': -7.5817394,
+            'x': -3.5525963,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_grainstack-thaw-sunset',
+            'color': 'cyan',
+            'y': -8.8015795,
+            'x': -1.788946,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_camille-monet-in-the-garden-at-the-house-in-argenteuil',
+            'color': 'cyan',
+            'y': -8.8808165,
+            'x': -3.3490059,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_waterloo-bridge-3-1901',
+            'color': 'cyan',
+            'y': -8.0833473,
+            'x': -5.1279011,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-vale-of-ashburnham',
+            'color': 'yellow',
+            'y': -1.1930839,
+            'x': 6.5683136,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_water-lilies-1907',
+            'color': 'cyan',
+            'y': -5.3628507,
+            'x': -5.28023,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'claude-monet_the-undergrowth-in-the-forest-of-saint-germain',
+            'color': 'cyan',
+            'y': -9.1506758,
+            'x': -3.2878926,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_seated-beggar-and-his-dog-1629',
+            'color': 'lime',
+            'y': 4.6514001,
+            'x': -2.5646141,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_self-portrait-at-an-early-age-1629',
+            'color': 'lime',
+            'y': 6.4347649,
+            'x': 5.5105834,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_girl-in-the-window-1645',
+            'color': 'lime',
+            'y': 6.9087701,
+            'x': 8.7496767,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_bust-of-an-old-man-with-a-beret-1631',
+            'color': 'lime',
+            'y': 6.1602206,
+            'x': 5.1850057,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_beggar-man-and-woman-1631',
+            'color': 'lime',
+            'y': 5.5224433,
+            'x': -5.2243338,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_rome-from-monte-testaccio',
+            'color': 'yellow',
+            'y': -5.8049536,
+            'x': 6.0710359,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_three-oriental-figures-jacob-and-laban-1641',
+            'color': 'lime',
+            'y': 6.280931,
+            'x': -3.714366,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_heriot-s-hospital-edinburgh',
+            'color': 'yellow',
+            'y': -5.7406421,
+            'x': 7.70293,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-holy-family-1645',
+            'color': 'lime',
+            'y': 2.9492209,
+            'x': 8.6373224,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_an-old-woman-sleeping-1635',
+            'color': 'lime',
+            'y': 4.5563459,
+            'x': -2.1209309,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-shell-conus-marmoreus-1650',
+            'color': 'lime',
+            'y': 4.545414,
+            'x': 0.70396614,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_portrait-of-mother-of-rembrandt',
+            'color': 'lime',
+            'y': 5.2192645,
+            'x': 4.8790569,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_stormy-landscape',
+            'color': 'lime',
+            'y': 0.30227226,
+            'x': 5.5336804,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_christ-crowned-with-thorns',
+            'color': 'lime',
+            'y': 5.8399029,
+            'x': -0.89294231,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_jacob-shown-the-bloodstained-coat-of-joseph-1657',
+            'color': 'lime',
+            'y': 5.3663201,
+            'x': -7.7206531,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_the-rich-man-from-the-parable-1627',
+            'color': 'lime',
+            'y': 3.2774811,
+            'x': 9.1472569,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_self-portrait-with-beret-1634',
+            'color': 'lime',
+            'y': 6.9771791,
+            'x': 5.4250193,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_christ-preaching-1652',
+            'color': 'lime',
+            'y': 6.3407807,
+            'x': -2.6938517,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_john-the-baptist-preaching-1635',
+            'color': 'lime',
+            'y': 1.4298512,
+            'x': 6.6287656,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_old-man-seated-in-an-armchair-full-length',
+            'color': 'lime',
+            'y': 2.9872038,
+            'x': -0.39081335,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_christ-on-the-cross-1631',
+            'color': 'lime',
+            'y': 4.6424541,
+            'x': 7.8968315,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_esther-before-ahasuerus-1660',
+            'color': 'lime',
+            'y': 5.7564206,
+            'x': -6.5945201,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_landscape-with-an-obelisk-1650',
+            'color': 'lime',
+            'y': 3.6665583,
+            'x': -3.0190916,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_child-in-a-tantrum',
+            'color': 'lime',
+            'y': 7.4449635,
+            'x': -3.8834748,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_a-man-seated-at-a-table-covered-with-books-1636',
+            'color': 'lime',
+            'y': 4.7086105,
+            'x': -7.5351238,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_portrait-of-a-bearded-man-in-a-wide-brimmed-hat-1633',
+            'color': 'lime',
+            'y': 7.3470483,
+            'x': 8.6475687,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_man-sharpening-a-quill-1632',
+            'color': 'lime',
+            'y': 5.9352727,
+            'x': 7.2534146,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-chapter-house-salisbury-chathedral',
+            'color': 'yellow',
+            'y': -5.8335648,
+            'x': 10.637521,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_portrait-of-margeretha-de-geer-1661',
+            'color': 'lime',
+            'y': 7.3633966,
+            'x': 7.416676,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_st-francis-beneath-a-tree-praying-1657',
+            'color': 'lime',
+            'y': 3.5252922,
+            'x': -2.2235658,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'rembrandt_abraham-dismissing-hagar-1637',
+            'color': 'lime',
+            'y': 5.7540245,
+            'x': -3.172807,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_landscape-with-a-river-and-a-bay-in-the-background',
+            'color': 'yellow',
+            'y': -0.80813801,
+            'x': 4.0112152,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-devil-s-bridge-st-gothard',
+            'color': 'yellow',
+            'y': -0.51633281,
+            'x': 4.9648151,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_rome-the-colosseum',
+            'color': 'yellow',
+            'y': -4.041101,
+            'x': 11.447694,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_keyes-mill',
+            'color': 'yellow',
+            'y': -1.914516,
+            'x': 6.1173773,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_what-you-will-1822',
+            'color': 'yellow',
+            'y': -0.65023416,
+            'x': 7.3043661,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-morning-after-the-deluge',
+            'color': 'yellow',
+            'y': -1.8151824,
+            'x': 4.1674943,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_pendennis-castle-cornwall-scene-after-a-wreck',
+            'color': 'yellow',
+            'y': -5.2930427,
+            'x': 5.6619625,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_raby-castle-residence-of-the-earl-of-darlington',
+            'color': 'yellow',
+            'y': -0.45807222,
+            'x': 5.3837714,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_two-women-and-a-letter',
+            'color': 'yellow',
+            'y': 1.3737351,
+            'x': 5.0389085,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_ulysses-deriding-polyphemus-1829',
+            'color': 'yellow',
+            'y': -2.3479321,
+            'x': 6.8788662,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_stamford',
+            'color': 'yellow',
+            'y': -3.3096981,
+            'x': 6.76647,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_transept-of-ewenny-priory-glamorganshire',
+            'color': 'yellow',
+            'y': -6.3722329,
+            'x': 10.532936,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_sun-rising-through-vagour-fishermen-cleaning-and-sellilng-fish',
+            'color': 'yellow',
+            'y': -2.4972978,
+            'x': 8.4983559,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_rome-from-the-vatican',
+            'color': 'yellow',
+            'y': -5.3678627,
+            'x': 10.580448,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_welsh-bridge-at-shrewsbury',
+            'color': 'yellow',
+            'y': -4.9685822,
+            'x': 8.6464262,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_rocky-bay-with-figures',
+            'color': 'yellow',
+            'y': -0.47985643,
+            'x': 3.3707659,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_pope-s-villa-at-twickenham',
+            'color': 'yellow',
+            'y': -1.0465147,
+            'x': 7.1192808,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_petworth-park-tillington-church-in-the-distance',
+            'color': 'yellow',
+            'y': -1.4306115,
+            'x': 5.0540404,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_conway-castle',
+            'color': 'yellow',
+            'y': -4.2486367,
+            'x': 7.3362365,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_interior-of-salisbury-cathedral',
+            'color': 'yellow',
+            'y': -5.6161737,
+            'x': 10.571585,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_longship-lighthouse-lands-end',
+            'color': 'yellow',
+            'y': -3.5706911,
+            'x': 3.2876194,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_calais-pier-with-french-poissards-preparing-for-sea-an-english-packeet-arriving',
+            'color': 'yellow',
+            'y': -1.9002466,
+            'x': 8.007534,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_ploughing-up-turnips-near-slough',
+            'color': 'yellow',
+            'y': -1.3673836,
+            'x': 7.4671993,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_ariccia-sunset',
+            'color': 'yellow',
+            'y': -0.86925614,
+            'x': 9.3866062,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_mountain-stream-coniston',
+            'color': 'yellow',
+            'y': 0.39505094,
+            'x': 4.7703238,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_passage-of-mount-cenis',
+            'color': 'yellow',
+            'y': -3.0636668,
+            'x': 5.9605308,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_venice-looking-east-from-the-guidecca-sunrise',
+            'color': 'yellow',
+            'y': -2.6222937,
+            'x': 1.9776767,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_waves-breaking-on-a-beach-1845',
+            'color': 'yellow',
+            'y': 0.066535003,
+            'x': 2.7345018,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-festival-of-the-opening-of-the-vintage-macon',
+            'color': 'yellow',
+            'y': -0.71354663,
+            'x': 9.0190315,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_self-portrait-1',
+            'color': 'yellow',
+            'y': 6.42623,
+            'x': 8.3744946,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_bridge-of-sighs-ducal-palace-and-custom-house-venice-canaletti-painting',
+            'color': 'yellow',
+            'y': -2.7918341,
+            'x': 11.280591,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_london',
+            'color': 'yellow',
+            'y': -2.7396786,
+            'x': 11.310465,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_rainbow',
+            'color': 'yellow',
+            'y': -2.1550887,
+            'x': 5.3109393,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_mont-blanc-from-fort-roch-val-d-aosta',
+            'color': 'yellow',
+            'y': -3.4791694,
+            'x': 5.464994,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_san-giorgio-maggiore-in-the-morning',
+            'color': 'yellow',
+            'y': -1.6559703,
+            'x': 1.637271,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_caligula-s-palace-and-bridge',
+            'color': 'yellow',
+            'y': -1.8149475,
+            'x': 10.332537,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_okehampton',
+            'color': 'yellow',
+            'y': -0.77158642,
+            'x': 5.9271111,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-brunig-pass-from-meringen-1848',
+            'color': 'yellow',
+            'y': -2.4234824,
+            'x': 4.5104756,
+            'fixed': true,
+            'size': 5
+        }, {
+            'image name':
+                'william-turner_the-burning-of-the-houses-of-parliament-2',
+            'color': 'yellow',
+            'y': -4.5112634,
+            'x': 3.3674757,
+            'fixed': true,
+            'size': 5
+        }],
     'links': [
         {
             'source': 0,
@@ -2649,7 +2649,9 @@ export default {
             'source': 180,
             'target': 197,
             'value': 4.0
-        }, {'source': 181, 'target': 166, 'value': 3.0}, {'source': 181, 'target': 120, 'value': 3.0}, {
+        },
+        {'source': 181, 'target': 166, 'value': 3.0},
+        {'source': 181, 'target': 120, 'value': 3.0}, {
             'source': 181,
             'target': 68,
             'value': 3.0

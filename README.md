@@ -103,15 +103,18 @@ FDG links
 14. (P) A DISTRIBUTED METHOD FOR FAST FORCE-DIRECTED LAYOUT OF LARGE SCALE-FREE NETWORK GRAPHS https://dalspace.library.dal.ca/bitstream/handle/10222/65249/Lapierre-Nathan-MCSc-Dec-2015.pdf
  
 
-d3-force:
-- Doku https://github.com/d3/d3-force
-- Force Dragging III https://bl.ocks.org/mbostock/ad70335eeef6d167bc36fd3c04378048
+FDG:
+- What is a FDG good for https://en.wikipedia.org/wiki/Force-directed_graph_drawing
+- FDG with D3 https://github.com/d3/d3-force
 - Understand FDG http://www.puzzlr.org/force-graphs-with-d3/
+- Understanding different forces http://d3indepth.com/force-layout/
 - A-Z FDG http://www.coppelia.io/2014/07/an-a-to-z-of-extra-features-for-the-d3-force-layout/
-- Force examples: https://bl.ocks.org/sathomas + https://gist.github.com/sathomas/1ca23ee9588580d768aa
+- Force examples: https://bl.ocks.org/sathomas
 - Modifying a Force Layout https://bl.ocks.org/mbostock/1095795
-- interactiv FDG https://medium.com/ninjaconcept/interactive-dynamic-force-directed-graphs-with-d3-da720c6d7811
-- good Class example http://jsfiddle.net/mbgw2ooc/2/
+- interactive FDG https://medium.com/ninjaconcept/interactive-dynamic-force-directed-graphs-with-d3-da720c6d7811
+- good class example http://jsfiddle.net/mbgw2ooc/2/
+- different speed code example https://gist.github.com/sathomas/1ca23ee9588580d768aa
+- FDG in canvas example https://bl.ocks.org/mbostock/ad70335eeef6d167bc36fd3c04378048
  
 TODO:
 - alpha überarbeiten
@@ -124,6 +127,9 @@ TODO:
 
 Ideas: 
 - Force layout benutzen sinnvoll? alternativen zu tsne googlen, da war was mimt Barnes-Hut, was auch in 'charge' benutzt wird http://www.puzzlr.org/force-directed-graph-charge-forces/
+
+ToRead:
+- block of data vis https://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/
 
 DONE:
 23.02.:
@@ -154,5 +160,11 @@ DONE:
 - d3 + redux example https://bl.ocks.org/Fil/47678a37cc46fee9b3ed4769c31914e7
 - vue app init
 - add svg viewpoint
+
+
+TODO:
+add images
+- check performance with big dataset/chrome performance panael
+remove simulation https://bl.ocks.org/puzzler10/9159a992f58aa4277c2583fa41f01ed0 http://www.puzzlr.org/d3-drag-minimal-working-example/
 
 
