@@ -2740,5 +2740,3 @@ export default {
         }, {'source': 199, 'target': 173, 'value': 5.0}],
     'multigraph': false
 };
-
-export default graph
