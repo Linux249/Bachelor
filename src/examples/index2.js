@@ -1,6 +1,8 @@
 import * as d3 from 'd3'
-//import graph from '../mock/graph'
+import graph from '../mock/graphSmall'
 import './stlye.css'
+import getNodeColor from './util/getNodeColor'
+import getNeighbors from './util/getNeighbors'
 
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/
 // fix dragged + img: http://bl.ocks.org/norrs/2883411
@@ -83,8 +85,8 @@ function refreshData() {
     refreshButton.innerText = "loading"
     let data = nodes.map((node) => {
         let obj = {
-            x: (node.fx - width/2)*25/width,
-            y: (node.fy - height/2)*25/height,
+            x: node.fx,
+            y: node.fy,
             modified: node.modified,
             dragged: node.dragged,
             index: node.index,
@@ -121,9 +123,14 @@ function refreshData() {
 let width = window.innerWidth
 let height = window.innerHeight
 
-let svg = d3.select('svg')
-svg.attr('width', width).attr('height', height)//.attr("viewport", '250 250 20 20')
+let scaleX = 40
+let scaleY = 40
 
+let svg = d3.select('svg')
+svg
+    .attr('width', width)
+    .attr('height', height)
+    .attr("viewBox", `${-width/2/scaleX} ${-height/2/scaleY} ${width/scaleX} ${height/scaleY}`)
 
 function zoom_actions(){
     g.attr("transform", d3.event.transform)
@@ -133,7 +140,6 @@ function zoom_actions(){
 let zoom_handler = d3.zoom()
     .on("zoom", zoom_actions)
 
-
 zoom_handler(svg);
 
 svg.on('dblclick.zoom', null)  // disable zoom behavior
@@ -141,49 +147,7 @@ svg.on('dblclick.zoom', null)  // disable zoom behavior
 //add encompassing group for the zoom
 let g = svg.append("g")
     .attr("class", "everything");
-/*nodes = [
-{
 
-    'image name': 'vincent-van-gogh_sower-1888-1',
-    'color': 'magenta',
-    'y': -11.679933,
-    'x': -1.2364955,
-    'fixed': true,
-    'size': 5
-}, {
-    'image name':
-        'william-turner_the-bass-rock-for-the-provincial-antiquities-of-scotland',
-    'color': 'yellow',
-    'y': -4.3107944,
-    'x': 5.371901,
-    'fixed': true,
-    'size': 5
-}, {
-    'image name':
-        'rembrandt_the-descent-from-the-cross-by-torchlight-1654',
-    'color': 'lime',
-    'y': 5.8075552,
-    'x': -1.6942906,
-    'fixed': true,
-    'size': 5
-}, {
-    'image name':
-        'claude-monet_cliff-at-grainval-near-fecamp',
-    'color': 'cyan',
-    'y': -10.629107,
-    'x': -2.3567722,
-    'fixed': true,
-    'size': 5
-}, {
-    'image name':
-        'vincent-van-gogh_cypresses-1889-2',
-    'color': 'magenta',
-    'y': 2.8836176,
-    'x': -1.6800337,
-    'fixed': true,
-    'size': 5
-}]
-*/
 
 function run(data) {
     if(nodes.length) {
@@ -207,8 +171,11 @@ function run(data) {
         node.dragged = false
         node.sx = node.x
         node.sy = node.y
-        node.fx = node.x*width/25 + width/2 // 20fache
-        node.fy = node.y*height/25 + height/2  // 20fache
+        node.fx = node.x//*width/25 //+ width/2 // 20fache
+        //node.x = node.x*width/25 + width/2 // 20fache
+        node.fy = node.y//*height/25 // + height/2  // 20fache
+
+        //node.y = node.y*height/25 + height/2  // 20fache
 
         //node.y = node.y*20 + 300  // 20fache
         //node.fy = node.y*20 + 300  // 20fache
@@ -217,33 +184,7 @@ function run(data) {
 
     let simulation = d3.forceSimulation().nodes(nodes);
 
-    //console.log(links)
 
-    function getNeighbors(node) {
-        //console.log(node)
-        return links.reduce((neighbors, link) => {
-                //console.log(link)
-                //if (link.target === node) {
-                    //console.log("target")
-                    //console.log(node)
-                    //console.log(link.target)
-                    //link.source.value = link.value
-                    //neighbors.push(link.source)
-                    //neighbors.push(nodes.find(n => n.id === link.source.id))
-                    //neighbors.push(link.source.id)
-                //} else
-                    if (link.source === node) {
-                    link.target.value = link.value
-                    //console.log("source")
-                    //neighbors.push(nodes.find(n => n.id === link.target.id))
-                    //neighbors.push(link.target.id)
-                    neighbors.push(link.target)
-                }
-                return neighbors
-            },
-            []
-        )
-    }
 
 
 
@@ -254,7 +195,7 @@ function run(data) {
 //add forces
 //we're going to add a charge to each node
 //also going to add a centering force
-    simulation
+    //simulation
         //.force("charge_force", d3.forceManyBody())          // nodes stoßen sich ab
         //.force("center_force", d3.forceCenter(width / 2, height / 2)); // nodes starten in der mitte
 
@@ -269,27 +210,6 @@ function run(data) {
     simulation.force("links",link_force)
 
 
-    function getNodeColor(node, neighbors, draggedNode) {
-        let color = d3.rgb(node.color)
-        //return color
-        //painting dragged node
-        if(draggedNode && draggedNode.index && draggedNode.index === node.index ) return color
-
-        // painting neighbours
-        else if (Array.isArray(neighbors) && neighbors.find(n => n.index === node.index)) return color
-
-        //nodes not dragged while dragging
-        else if(draggedNode && draggedNode.index) {
-            console.log(draggedNode)
-            color.opacity = 0.2
-
-            return color
-        }
-
-        // default
-        else return color
-    }
-
 
 //draw lines for the links
     linkElements = g
@@ -298,7 +218,7 @@ function run(data) {
         .selectAll("line")
         .data(links)
         .enter().append("line")
-        .attr("stroke-width", 2)
+        .attr("stroke-width", 0.02)
         .style("stroke", '#c8c8c8');      //function linkColor()
 
 //draw circles for the nodes
@@ -309,8 +229,12 @@ function run(data) {
         .data(nodes)
         .enter()
         .append("circle")
-        .attr("r", 15)
+        .attr("r", 0.25)
         .attr("fill", getNodeColor)
+        .attr("stroke", "#cecece")
+        .attr("stroke-width", 0.02)
+
+
 //.append
 
 
@@ -356,7 +280,7 @@ function run(data) {
 
     let dragDrop = d3.drag()
         .on('start', function (node) {
-            neighbors = getNeighbors(node)
+            neighbors = getNeighbors(node, links)
             console.log("in drag")
             console.log(neighbors)
             nodeElements.attr('fill',  function (n) { return getNodeColor(n, neighbors, node) })
@@ -406,8 +330,8 @@ function run(data) {
     dragDrop(nodeElements);
 
     nodeElements.on("dblclick",function(node){
-        console.log("dbclick")
-        neighbors = getNeighbors(node)
+        //console.log("dbclick")
+        neighbors = getNeighbors(node, links)
 
         neighbors.map(n => {
             //console.log(n.value)
@@ -417,15 +341,18 @@ function run(data) {
             //console.log({dXw, dYw})
             if(n.modified) n.modified = false
             if(n.dragged) n.dragged = false
-            n.fx = n.sx*width/25 + width/2 // 20fache
-            n.fy = n.sy*height/25 + height/2 // 20fache
+            n.fx = n.sx
+            n.fy = n.sy
         })
 
         if(node.dragged) node.dragged = false
         if(node.modified) node.modified = false
-        node.fx = node.sx*width/25 + width/2 // 20fache
-        node.fy = node.sy*height/25 + height/2 // 20fache
-        console.log(node)
+        node.fx = node.sx
+        node.fy = node.sy
         simulation.restart()
     });
 }
+
+
+
+run(graph)

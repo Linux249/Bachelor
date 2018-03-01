@@ -152,5 +152,7 @@ DONE:
 29.02
 - d3 state
 - d3 + redux example https://bl.ocks.org/Fil/47678a37cc46fee9b3ed4769c31914e7
+- vue app init
+- add svg viewpoint
 
 

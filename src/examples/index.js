@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import graph from '../mock/graph'
+import graph from '../mock/graphSmall'
 
 //console.log(graph)
 // draggen im raster: https://jsfiddle.net/6g9howo7/11/

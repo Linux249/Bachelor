@@ -4,8 +4,7 @@
 }
 
 .nodes circle {
-    stroke: #fff;
-    stroke-width: 1.5px;
+
 }
 
 body {
@@ -25,6 +24,7 @@ header {
     display: flex;
     align-items: center;
     border: 1px solid rgba(32, 33, 36, 0.28);
+    padding: 0 1em;
 }
 
 .button:hover {

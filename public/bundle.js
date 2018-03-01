@@ -9716,42 +9716,41 @@ function run(data) {
 
     simulation.force("links", link_force);
 
-    function getNodeColor(node, neighbors) {
-        //console.log({node, neighbors})
-        if (Array.isArray(neighbors)) {
-            //console.log("neighbors")
-            //console.log(neighbors)
-            //console.log(node)
-            var t = neighbors.find(function (n) {
-                //console.log("n: "+ n.index)
-                //console.log("node: " + node.index)
+    function getNodeColor(node, neighbors, draggedNode) {
+        var color = d3.rgb(node.color);
+        //return color
+        //painting dragged node
+        if (draggedNode && draggedNode.index && draggedNode.index === node.index) return color;
+
+        // painting neighbours
+        else if (Array.isArray(neighbors) && neighbors.find(function (n) {
                 return n.index === node.index;
-                //console.log("Green")
-            });
-            if (t) return 'green';
-        } else if (node.color) return node.color;
-        return 'gray';
+            })) return color;
+
+            //nodes not dragged while dragging
+            else if (draggedNode && draggedNode.index) {
+                    console.log(draggedNode);
+                    color.opacity = 0.2;
+
+                    return color;
+                }
+
+                // default
+                else return color;
     }
+
+    //draw lines for the links
+    linkElements = g.append("g").attr("class", "links").selectAll("line").data(links).enter().append("line").attr("stroke-width", 2).style("stroke", '#c8c8c8'); //function linkColor()
 
     //draw circles for the nodes
     nodeElements = g.append("g").attr("class", "nodes").selectAll("circle").data(nodes).enter().append("circle").attr("r", 15).attr("fill", getNodeColor);
     //.append
 
 
-    //draw lines for the links
-    linkElements = g.append("g").attr("class", "links").selectAll("line").data(links).enter().append("line").attr("stroke-width", 2).style("stroke", '#c8c8c8'); //function linkColor()
-
-
     //node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
     // TODO warum nicht 'node' der funktion übergeben + return?
     // The complete tickActions function
     function tickActions() {
-        //update circle positions each tick of the simulation
-        nodeElements.attr("cx", function (d) {
-            return d.x;
-        }).attr("cy", function (d) {
-            return d.y;
-        });
 
         //update link positions
         //simply tells one end of the line to follow one node around
@@ -9764,6 +9763,13 @@ function run(data) {
             return d.target.x;
         }).attr("y2", function (d) {
             return d.target.y;
+        });
+
+        //update circle positions each tick of the simulation
+        nodeElements.attr("cx", function (d) {
+            return d.x;
+        }).attr("cy", function (d) {
+            return d.y;
         });
     }
     simulation.on("tick", tickActions);
@@ -9786,8 +9792,8 @@ function run(data) {
         neighbors = getNeighbors(node);
         console.log("in drag");
         console.log(neighbors);
-        nodeElements.attr('fill', function (node) {
-            return getNodeColor(node, neighbors);
+        nodeElements.attr('fill', function (n) {
+            return getNodeColor(n, neighbors, node);
         });
 
         //node.fx = node.x

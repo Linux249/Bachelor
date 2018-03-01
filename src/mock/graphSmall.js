@@ -1,4 +1,4 @@
-export const graph = {
+export default {
     'directed': false,
     'graph': {'name': 'Artist Relations'},
     'nodes': [
