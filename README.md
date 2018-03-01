@@ -18,6 +18,20 @@ FDG links
 ## Ideen
 - der FDG kennt verschiedene force methoden - diese könnte man alle analysieren
 
+# tsnemap - google arts experiment
+
+## thirdparty js
+- CSSPlugin https://greensock.com/docs/Plugins/CSSPlugin
+- EasePack http://greensock.com
+- OrbitControls https://gist.github.com/mrflix/8351020 https://github.com/mrdoob/three.js/blob/master/examples/js/controls/OrbitControls.js
+- TrackballControls https://github.com/mrdoob/three.js/blob/master/examples/js/controls/TrackballControls.js
+- TweenLite https://greensock.com/tweenlite
+- clipboard https://zenorocha.github.io/clipboard.js
+- hammer https://github.com/hammerjs/hammer.js/
+- material https://github.com/google/material-design-lite
+- three
+- twix http://github.com/neilco/
+
 ## vorgehen: 
 - paper 1 lesen
 - prototypen bauen
@@ -86,6 +100,8 @@ FDG links
 11. Many 3D/Orbit FDG https://bl.ocks.org/micahstubbs/a9eb7847c56c4c844d36cfbc5075be73
 12. (P) Graph Layout by t-SNE http://www2.cs.arizona.edu/~kobourov/tsne-eurovis17.pdf
 13. Move Groups + store example: http://jsfiddle.net/mbgw2ooc/2/
+14. (P) A DISTRIBUTED METHOD FOR FAST FORCE-DIRECTED LAYOUT OF LARGE SCALE-FREE NETWORK GRAPHS https://dalspace.library.dal.ca/bitstream/handle/10222/65249/Lapierre-Nathan-MCSc-Dec-2015.pdf
+ 
 
 d3-force:
 - Doku https://github.com/d3/d3-force
@@ -116,9 +132,13 @@ DONE:
 
 
 26.02.
+- drag & drop
+- getNeighbours
+- neighbour move weighted  
 
 27.02.
 - python backend 
+- refresh method
 - 
 
 28.02.
@@ -127,5 +147,10 @@ DONE:
 - classes http://jsfiddle.net/mbgw2ooc/2/
 - start Werte zurück geben
 - welche Knoten wurden verschoben, welche folgten nur
+- inspect google tsnemap third party js 
+
+29.02
+- d3 state
+- d3 + redux example https://bl.ocks.org/Fil/47678a37cc46fee9b3ed4769c31914e7
 
 
