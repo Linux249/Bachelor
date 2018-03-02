@@ -155,16 +155,25 @@ DONE:
 - welche Knoten wurden verschoben, welche folgten nur
 - inspect google tsnemap third party js 
 
-29.02
+01.03
 - d3 state
 - d3 + redux example https://bl.ocks.org/Fil/47678a37cc46fee9b3ed4769c31914e7
 - vue app init
 - add svg viewpoint
 
+02.03.
+- add imgs
+- add static file server
+- optimize perfomance (remove getColor while D&D, remove edges)
+- add rects around images
 
 TODO:
-add images
-- check performance with big dataset/chrome performance panael
+canvas
+- DOM-to-Canvas using D3 https://bl.ocks.org/mbostock/1276463
 remove simulation https://bl.ocks.org/puzzler10/9159a992f58aa4277c2583fa41f01ed0 http://www.puzzlr.org/d3-drag-minimal-working-example/
+webpack - img loading
+refactor code - update simulation
 
+Long Todo:
+- learning AI (start) https://ai.google/education#?modal_active=none
 

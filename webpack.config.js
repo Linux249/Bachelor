@@ -2,7 +2,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, 'server/public'),
         filename: 'bundle.js'
     },
     module: {
@@ -15,7 +15,11 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [ 'style-loader', 'css-loader' ]
-            }
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [ 'file-loader' ]
+            },
         ]
     },
     devServer: {

@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 //import graph from './mock/graphSmall'
-import graph from './mock/graphMiddle'
+//import graph from './mock/graphMiddle'
 import './stlye.css'
 import getNodeColor from './util/getNodeColor'
 import getNeighbors from './util/getNeighbors'
@@ -14,6 +14,8 @@ let nodes = [],
 
 let nodeElements
 let linkElements
+let imgElements
+let borderElements
 
 /*let sendButton = document.getElementById('send');
 sendButton.addEventListener('click', () => {
@@ -40,7 +42,7 @@ loadButton.addEventListener('click', () => {
 let refreshButton = document.getElementById('refresh');
 refreshButton.addEventListener('click', () => {
     console.log("refresh clicked")
-    refreshData()
+    refreshData(nodes)
 })
 
 
@@ -80,12 +82,11 @@ refreshButton.addEventListener('click', () => {
         .then(resData => console.log(resData))
 }*/
 
-
-function refreshData() {
+function refreshData(nodes) {
     // TODO loading
     refreshButton.innerText = "loading"
     let data = nodes.map((node) => {
-        let obj = {
+        return {
             x: node.fx,
             y: node.fy,
             modified: node.modified,
@@ -98,7 +99,7 @@ function refreshData() {
             ///console.log(obj)
             //console.log(node)
         //}
-        return obj
+        //return obj
     })
     //
     fetch('http://localhost:8000/api/v1/dataFromFile', {
@@ -110,7 +111,6 @@ function refreshData() {
         body: JSON.stringify(data)
     })
         .then(res => {
-
             console.log(res)
             return res.json()
         })
@@ -157,37 +157,20 @@ function run(data) {
             .attr("class", "everything");
     }
 
-    //if(linkElements) linkElements.remove()
-
     nodes = data.nodes
     links = data.links
 
-
-    
     nodes = nodes.map(node => {
-        //console.log(node)
-        //node.fx = node.x*50 + 700
-        //node.x = node.x*50 + 700 // 20fache
         node.modified = false
         node.dragged = false
         node.sx = node.x
         node.sy = node.y
         node.fx = node.x//*width/25 //+ width/2 // 20fache
-        //node.x = node.x*width/25 + width/2 // 20fache
         node.fy = node.y//*height/25 // + height/2  // 20fache
-
-        //node.y = node.y*height/25 + height/2  // 20fache
-
-        //node.y = node.y*20 + 300  // 20fache
-        //node.fy = node.y*20 + 300  // 20fache
         return node
     })
 
     let simulation = d3.forceSimulation().nodes(nodes);
-
-
-
-
 
 //set up the simulation
 //nodes only for now
@@ -213,17 +196,17 @@ function run(data) {
 
 
 //draw lines for the links
-    linkElements = g
+/*    linkElements = g
         .append("g")
         .attr("class", "links")
         .selectAll("line")
         .data(links)
         .enter().append("line")
         .attr("stroke-width", 0.02)
-        .style("stroke", '#c8c8c8');      //function linkColor()
+        .style("stroke", '#c8c8c8');      //function linkColor()*/
 
 //draw circles for the nodes
-    nodeElements = g
+/*    nodeElements = g
         .append("g")
         .attr("class", "nodes")
         .selectAll("circle")
@@ -234,11 +217,32 @@ function run(data) {
         .attr("fill", getNodeColor)
         .attr("stroke", "#cecece")
         .attr("stroke-width", 0.02)
+*/
 
+    //draw images
+    imgElements = g
+        .append("g")
+        .attr("class", "img")
+        .selectAll("image")
+        .data(nodes)
+        .enter()
+        .append("image")
+        .attr("height", 1)
+        .attr("width", 1)
+        .attr(" xlink:href", d => 'img/' + d['image name'] + '.jpg')
 
-//.append
-
-
+    borderElements = g
+        .append("g")
+        .attr("class", "rect")
+        .selectAll("rect")
+        .data(nodes)
+        .enter()
+        .append("rect")
+        .attr("stroke", getNodeColor)
+        .attr("stroke-width", 0.05)
+        .attr("height", 1)
+        .attr("width", 1)
+        .attr("fill", "none")
 
 
 //node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
@@ -247,18 +251,24 @@ function run(data) {
     function tickActions() {
 
         //update link positions
-        //simply tells one end of the line to follow one node around
-        //and the other end of the line to follow the other node around
-        linkElements
+       /* linkElements
             .attr("x1", function(d) { return d.source.x; })
             .attr("y1", function(d) { return d.source.y; })
             .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
+            .attr("y2", function(d) { return d.target.y; });*/
 
         //update circle positions each tick of the simulation
-        nodeElements
+        /*nodeElements
             .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; });
+            .attr("cy", function(d) { return d.y; })
+*/
+        imgElements
+            .attr("x", function(d) { return d.x; })
+            .attr("y", function(d) { return d.y; })
+
+        borderElements
+            .attr("x", function(d) { return d.x; })
+            .attr("y", function(d) { return d.y; })
 
     }
     simulation.on("tick", tickActions );
@@ -284,7 +294,8 @@ function run(data) {
             neighbors = getNeighbors(node, links)
             console.log("in drag")
             console.log(neighbors)
-            nodeElements.attr('fill',  function (n) { return getNodeColor(n, neighbors, node) })
+            //nodeElements.attr('fill',  function (n) { return getNodeColor(n, neighbors, node) })
+            //nodeElements.attr('fill',  function (n) { return getNodeColor(n, neighbors, node) })
 
             //node.fx = node.x
             //node.fy = node.y
@@ -318,7 +329,7 @@ function run(data) {
             node.fx = d3.event.x
             node.fy = d3.event.y
         }).on('end', function (node) {
-            nodeElements.attr('fill', function (node) { return getNodeColor(node) })
+            //nodeElements.attr('fill', function (node) { return getNodeColor(node) })
             if (!d3.event.active) {
                 simulation.restart()
             }
@@ -328,9 +339,9 @@ function run(data) {
 
 
 //apply the drag_handler to our nodes
-    dragDrop(nodeElements);
+    dragDrop(imgElements);
 
-    nodeElements.on("dblclick",function(node){
+    imgElements.on("dblclick",function(node){
         //console.log("dbclick")
         neighbors = getNeighbors(node, links)
 
@@ -354,6 +365,9 @@ function run(data) {
     });
 }
 
+console.log(process)
+console.log(process.env)
+//console.log(NODE_ENV)
 
-
-run(graph)
+//if(Node.env)
+    run()

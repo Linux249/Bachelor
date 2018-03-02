@@ -1,4 +1,4 @@
-node_modules/
+node_modules/*
 /node_modules
 
 build/
@@ -6,3 +6,9 @@ build/
 
 .idea/
 /.idea
+.idea
+
+server/public/img
+server/public/img/*
+server/.idea
+server/.idea/*
