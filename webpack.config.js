@@ -2,7 +2,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'server/public'),
+        path: path.resolve(__dirname, 'server/public/'),
         filename: 'bundle.js'
     },
     module: {
@@ -23,7 +23,7 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.resolve(__dirname, './public'),
+        contentBase: path.resolve(__dirname, 'server/public'),
         port: 3000
     }
 };

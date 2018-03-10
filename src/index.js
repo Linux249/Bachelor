@@ -343,9 +343,9 @@ function run(data) {
 
     imgElements.on("dblclick",function(node){
         //console.log("dbclick")
-        neighbors = getNeighbors(node, links)
+        //neighbors = getNeighbors(node, links)
 
-        neighbors.map(n => {
+        /*neighbors.map(n => {
             //console.log(n.value)
             // weighted
             //const dXw = dX/n.value
@@ -356,6 +356,7 @@ function run(data) {
             n.fx = n.sx
             n.fy = n.sy
         })
+        */
 
         if(node.dragged) node.dragged = false
         if(node.modified) node.modified = false
@@ -370,4 +371,6 @@ console.log(process.env)
 //console.log(NODE_ENV)
 
 //if(Node.env)
-    run()
+    //run()
+
+

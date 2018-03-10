@@ -24,7 +24,7 @@ def get_graph(userData=[]):
 
 """
 ### dev Server
-def get_graph(userData = []):
+def get_graph(userData = []):   
     filename = "data/response_data.txt"
     with open(filename, "rb") as f: 
         return f.read()

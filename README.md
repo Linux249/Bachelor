@@ -94,14 +94,13 @@ FDG links
 5. Visualizing Data using t-SNE http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
 6. Example on t-SNE in JS http://homepage.tudelft.nl/19j49/tsnejs/
 7. Images in canvas https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images
-8. Render to canvas https://github.com/Flipboard/react-canvas
 9. Curated list of awesome Canvas examples https://github.com/raphamorim/awesome-canvas
 10. Using React with canvas element https://blog.lavrton.com/using-react-with-html5-canvas-871d07d8d753
 11. Many 3D/Orbit FDG https://bl.ocks.org/micahstubbs/a9eb7847c56c4c844d36cfbc5075be73
 12. (P) Graph Layout by t-SNE http://www2.cs.arizona.edu/~kobourov/tsne-eurovis17.pdf
 13. Move Groups + store example: http://jsfiddle.net/mbgw2ooc/2/
 14. (P) A DISTRIBUTED METHOD FOR FAST FORCE-DIRECTED LAYOUT OF LARGE SCALE-FREE NETWORK GRAPHS https://dalspace.library.dal.ca/bitstream/handle/10222/65249/Lapierre-Nathan-MCSc-Dec-2015.pdf
- 
+15. http://compvis10.iwr.uni-heidelberg.de
 
 FDG:
 - What is a FDG good for https://en.wikipedia.org/wiki/Force-directed_graph_drawing
@@ -115,7 +114,12 @@ FDG:
 - good class example http://jsfiddle.net/mbgw2ooc/2/
 - different speed code example https://gist.github.com/sathomas/1ca23ee9588580d768aa
 - FDG in canvas example https://bl.ocks.org/mbostock/ad70335eeef6d167bc36fd3c04378048
- 
+
+
+Canvas:
+- Awesome Canvas - A curated list of awesome HTML5 Canvas https://github.com/raphamorim/awesome-canvas
+- Canvas Tutorial(s) https://developer.mozilla.org/de/docs/Web/Guide/HTML/Canvas_Tutorial
+
 TODO:
 - alpha überarbeiten
 - - refresh
@@ -134,18 +138,15 @@ ToRead:
 DONE:
 23.02.:
 - in d3-force einarbeiten
-- 
-
 
 26.02.
 - drag & drop
 - getNeighbours
-- neighbour move weighted  
+- neighbour move base on link-weight
 
 27.02.
 - python backend 
 - refresh method
-- 
 
 28.02.
 - clean up
@@ -167,9 +168,59 @@ DONE:
 - optimize perfomance (remove getColor while D&D, remove edges)
 - add rects around images
 
+
+03.03
+- doublclick - reset only one
+- toggle move neighbours
+- change code
+- test canvas
+
+05.03.
+- canvas
+- book with easy introductions http://proquest.techbus.safaribooksonline.de/book/web-development/9781785284892/8dot-game-development/ch08s03_html
+
+07.03:
+- canvas in vue
+- draw picture
+
+08.03:
+- node backend with socket
+- send server rendered picture https://stackoverflow.com/questions/26331787/socket-io-node-js-simple-example-to-send-image-files-from-server-to-client
+- https://stackoverflow.com/questions/26331787/socket-io-node-js-simple-example-to-send-image-files-from-server-to-client
+
+09.03.
+- add link to nodes as neighbours
+- serve all images (mock + icons) + 10 example nodes + pictures
+
+- refactor node api - sockets in extra function
+
+- add button for loading in vue
+- research: Awesome Canvas
+
+- resize pictures
+- zoom all (mouswheel)
+- zoom picture
+
+
+
+- use requestAnimationFrame https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+
+
+Roadmap
+- Bilder mit fixer größe anzeigen
+- zoomen verschiebt position der Bilder aber nicht größe
+- img.onClick = Bild + nachbarn vergrößern
+- andere Bilder (kanten) hinzufügen/löschen
+-
+Fragen:
+- brauch es einen state?
+-
+
+
 TODO:
 canvas
 - DOM-to-Canvas using D3 https://bl.ocks.org/mbostock/1276463
+- starting here https://developer.mozilla.org/de/docs/Web/Guide/HTML/Canvas_Tutorial
 remove simulation https://bl.ocks.org/puzzler10/9159a992f58aa4277c2583fa41f01ed0 http://www.puzzlr.org/d3-drag-minimal-working-example/
 webpack - img loading
 refactor code - update simulation
