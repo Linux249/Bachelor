@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Your Canvas</title>
+
+    <style type="text/css"><!--
+    #container { position: relative; }
+    #imageTemp { position: absolute; top: 1px; left: 1px; }
+    --></style>
+
+</head>
+<body>
+<canvas id="imageView" width="600" height="500"></canvas>
+
+<script type="text/javascript">
+    var canvas, context, canvaso, contexto;
+    canvaso = document.getElementById('imageView');
+    context = canvaso.getContext('2d');
+    context.lineWidth = 5;
+
+    context.transform(5,0,0,5,0,0)
+    context.strokeStyle = 'red';
+    context.strokeRect(41, 14, 269, 196);
+    context.save()
+    context.transform(2,0,0,2,0,0)
+    context.restore()
+
+</script>
+</body>
+</html>

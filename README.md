@@ -191,19 +191,37 @@ DONE:
 09.03.
 - add link to nodes as neighbours
 - serve all images (mock + icons) + 10 example nodes + pictures
-
-- refactor node api - sockets in extra function
-
-- add button for loading in vue
-- research: Awesome Canvas
-
 - resize pictures
-- zoom all (mouswheel)
-- zoom picture
+- zoom all (mouswheel) semantic (not geometric)
+- move all (D&D)
 
 
+12.03.
+- double click makes Node active
+- only 'first' picture gets activated if pictures overlaying each other
+- load detailed image for active Node
+- make neighbour of active picture bigger
+- connect CanvasState Class to vue (buttons, informations)
+- zoom on neighbours (change the size)
+- Node.contains work for current size
+- transparent node who are not active/neighbours
+- freeze via doublclick
 
+14.03
+- add/remove neighbours
+- drag neighbours while freeze, else drag everything
+- 'lupe'
+- add python script to backend
+- cluster nodes and showing represents
+- reorder pictures shown
+
+- research: Awesome Canvas
+- center images (use x,y for image center and not as right/top corner)
+Optimize:
 - use requestAnimationFrame https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+- trottle mousemove = https://github.com/socketio/socket.io/blob/master/examples/whiteboard/public/main.js
+- refactor node api - sockets in extra function
+- while active mouse position under nodes shoud only search in the selection + neighbours
 
 
 Roadmap
@@ -222,8 +240,7 @@ canvas
 - DOM-to-Canvas using D3 https://bl.ocks.org/mbostock/1276463
 - starting here https://developer.mozilla.org/de/docs/Web/Guide/HTML/Canvas_Tutorial
 remove simulation https://bl.ocks.org/puzzler10/9159a992f58aa4277c2583fa41f01ed0 http://www.puzzlr.org/d3-drag-minimal-working-example/
-webpack - img loading
-refactor code - update simulation
+refactor code (alpha) - update simulation
 
 Long Todo:
 - learning AI (start) https://ai.google/education#?modal_active=none
