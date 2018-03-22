@@ -114,7 +114,7 @@ FDG:
 - good class example http://jsfiddle.net/mbgw2ooc/2/
 - different speed code example https://gist.github.com/sathomas/1ca23ee9588580d768aa
 - FDG in canvas example https://bl.ocks.org/mbostock/ad70335eeef6d167bc36fd3c04378048
-
+- FDG with WebWorker https://bl.ocks.org/mbostock/01ab2e85e8727d6529d20391c0fd9a16
 
 Canvas:
 - Awesome Canvas - A curated list of awesome HTML5 Canvas https://github.com/raphamorim/awesome-canvas
@@ -176,7 +176,7 @@ DONE:
 - test canvas
 
 05.03.
-- canvas
+- canvas (inspired by https://github.com/simonsarris/Canvas-tutorials/blob/master/shapes.js)
 - book with easy introductions http://proquest.techbus.safaribooksonline.de/book/web-development/9781785284892/8dot-game-development/ch08s03_html
 
 07.03:
@@ -208,20 +208,96 @@ DONE:
 - freeze via doublclick
 
 14.03
-- add/remove neighbours
 - drag neighbours while freeze, else drag everything
-- 'lupe'
-- add python script to backend
-- cluster nodes and showing represents
-- reorder pictures shown
+- fix error with wrong neighbours (store.nodes is now hashmap - not list anymore)
+- add/remove neighbours
+- mouseover = 'lens effect'
+- add python script to backend https://medium.com/@HolmesLaurence/integrating-node-and-python-6b8454bfc272
+- build communication between python/nodejs
+- add "update" nodes for refresh nodes from server
+- bedder socket handling
+- add Vue build to node project
+- restyle update button and and position information
+- Bug: zoom in firefox
 
-- research: Awesome Canvas
+
+15.03
+- add init X/Y to nodes for resetting
+Fix: zooming in Firefox
+Fix: Firefox - no drag neighbours based on value
+Refactor: Value is now [0-1] (old was [1-10])
+Fix: added neighbours does not have correct size
+- opacity (globalAlpha) only in active mode for not active nodes
 - center images (use x,y for image center and not as right/top corner)
+- active images grow in every direction, not only bottom/right
+- drag neighbour
+
+16.03
+- change graph/nodes model
+  - deliver the right format from server
+  - refactor client - neighbours: [] -> links: {}
+  - receive right format on server
+- compare on updateNode old with new and mark this nodes as modified
+- make every node draggable
+
+
+
+21.03.
+- add shadow canvas for find objects in canvas faster
+  - https://blog.lavrton.com/hit-region-detection-for-html5-canvas-and-how-to-listen-to-click-events-on-canvas-shapes-815034d7e9f8
+  - add random color on backend
+  - add/draw hitCtx
+  - change mouseover + active/deactive methods 
+- add label based colored borders
+- getcanvasState data to vue without storing whole canvasState in vue
+  - show label colors
+  - get scale buttons to vue
+  - add right Menu for active images
+- Fix: scaling to negative values is not needed
+- Fix: active mode should be possible when update nodes
+- Fix: label border size isn't scaling
+- Fix: deactive node shows no changes (only after a mouse move )
+- change zoom behaviour (now you can also zoom in/out while active mode)
+
+
+22.03.
+
+- refactoring backend code: DRY in dev/prod mode
+- resize images via +/- buttons
+- resize active images via +/- buttons
+- resize images in scrolling (the faktor should be also be getting a +/- value)
+
+
+- cluster nodes and showing represents
+  - add clustering segments on server
+  - add range slider for clustering segments
+  
+
+- animate activation/deactivation
+- reorder pictures shown (which on is up?) maybe with own hitmap - nodes is object now und can easly be used for reordering
+- add Webworker https://github.com/casperlamboo/canvas-webworker
+
+
+
+
+- scroll to mouse position (maybe with save/restore)
+
+- research pong-game with webasambly
+- research: canvas + webassambly
+- research: Awesome Canvas
+
+- add fps measure https://github.com/mrdoob/stats.js/stargazers
+
 Optimize:
 - use requestAnimationFrame https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
 - trottle mousemove = https://github.com/socketio/socket.io/blob/master/examples/whiteboard/public/main.js
 - refactor node api - sockets in extra function
-- while active mouse position under nodes shoud only search in the selection + neighbours
+- changes in visualisation more 'smoother' with setIntervall https://stackoverflow.com/questions/2359537/how-to-change-the-opacity-alpha-transparency-of-an-element-in-a-canvas-elemen
+- img loading time - smaller picture maybe?
+Production:
+- production version of app https://expressjs.com/en/advanced/best-practice-performance.html
+- A lof off error handling/try + catchs
+- setting python to production 
 
 
 Roadmap
@@ -245,3 +321,6 @@ refactor code (alpha) - update simulation
 Long Todo:
 - learning AI (start) https://ai.google/education#?modal_active=none
 
+
+BA-Topics
+- Untersuchung verschiedener Methoden zur effektiven nearest-neighbour suche
