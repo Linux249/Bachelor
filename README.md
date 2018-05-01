@@ -120,6 +120,167 @@ Canvas:
 - Awesome Canvas - A curated list of awesome HTML5 Canvas https://github.com/raphamorim/awesome-canvas
 - Canvas Tutorial(s) https://developer.mozilla.org/de/docs/Web/Guide/HTML/Canvas_Tutorial
 
+Clustering: 
+- https://blog.mapbox.com/clustering-millions-of-points-on-a-map-with-supercluster-272046ec5c97
+- https://stats.stackexchange.com/questions/183873/how-to-understand-the-drawbacks-of-hierarchical-clustering
+- https://github.com/math-utils/hierarchical-clustering
+- a nice introduction to k-means and clustering: 50 years beyond K-means: http://www.ppgia.pucpr.br/~fabricio/ftp/Roges/JainClustering_PRL10.pdf
+- Approximate K-Nearest Neighbour Based Spatial Clustering Using K-D Tree https://arxiv.org/ftp/arxiv/papers/1303/1303.1951.pdf
+- A Dynamic Linkage Clustering using KD-Tree https://portal.arid.my/Publications/5f55a43b-26e3-48.pdf
+Probleme: 
+- ein Fehlerhaftes Bild ist er zu erkennen, wenn sämtliche clusters "aufgelöst" sind. 
+- die (effezienten) cluster methoden sind unnütz weil: 
+    - zwei mal den selben algorythmus auf die selben Daten führt zu unterschiedlichen Ergebnissen bei:
+    
+Ideen: 
+- geclusterd wird was übereinander liegt
+- clustern was über/unter einer treshhold liegtl
+
+Fragen: 
+- wie viele cluster sollen gebildet werden? 
+- können cluster nicht einfach da gebildet werden wo es sehr dicht ist und da wo nicht nicht?
+ - wo ist es dicht? wie unterscheidet sich dieser ort von anderen "dichten"
+ - was ist die treshhold?
+
+HCA: 
+Agglomerative vs. divisive Berechnung: 
+- agglomerative is "bottom up": First every object is a cluster and then "similar" ones merge 
+- divisive is "top down": First everything is a cluster and then this get splitted. Splitting are possible in O(2^n) ways..   
+
+Agglomerative: 
+For finding dissimilar Objects/Clusters we choose a metric to measure distance between sets of objects.
+For specifying the dissimilarity of sets as a function of the pairwise distances of observation we choose a linkage criterion
+Some maybe (TODO: Research) usefully metrics are:
+ - Euclidean distance
+ - Manhatten distance
+ - Maximum distance
+ The metric influence the shape of clusters.
+ 
+The Linkage Criteria commonly useed (Source is in wp)
+  - Maximum (complete-linkage clustering)
+  - Minimum (single-linkage clustering)
+  - Mean/average linkage clustering (UPGMA)  
+   
+Javascript cluster libs:
+subercluster: https://github.com/mapbox/supercluster (https://blog.mapbox.com/clustering-millions-of-points-on-a-map-with-supercluster-272046ec5c97)
+- behave like maps
+- is there a centriod? 
+hcluster: https://github.com/cmpolis/hcluster.js/
+- not tested - looks most interessting
+
+clusterfck - https://github.com/tayden/clusterfck + https://harthur.github.io/clusterfck/
+- implements K-Means + HCA
+- K-Means: 
+ - defining desired numbers of clusters
+ - init with given centroids - if not, they are random (!!!)
+ - acces to centroids
+ - TODO: What is clusterIndex = kmeans.classify doing with our data?
+- HCA:
+ - has disance metric and linkage criterion options
+ - has .cluster for dinfing amount of clusters
+
+jHC: https://github.com/upphiminn/jHC
+- simple hca: test it
+- looks similar to toher (witch?) libs 
+
+node-gecluster (implements Smeamns)
+- https://github.com/yetzt/node-geocluster + http://c0bra.github.io/smeans.js/
+- simple implementation of clustering
+- this could be used for own cluster algo
+- set a fixed varianz for clsutering and then re-cluster every time the "area" change maybe
+
+figue: https://github.com/nantunes/figue
+- implementation of k-means, hca, Fuzzy C-means
+- has dendogram output (maybe very nice :) ) 
+ 
+Spatial indexing: 
+- RBush - add/remove https://github.com/mourner/rbush
+- kdbush: static, kd-tree, range/within (finding NN fast)
+
+These indexing could be used to improve performance:
+- discover nodes/images to show based on zoom (a lof of images should not be drawn)
+- maybe also for the clickHandler Mousemove. Items in the tree are areas 
+    - first check if handling 'find point' works
+    - than test if it is faster than HitArea (redraw)
+- Question: How does this can showing clusters in the demo?
+
+Switching from socket.io to Websocket:
+- Why? document the problems!
+- motivation - why you dont need socket.io : https://codeburst.io/why-you-don-t-need-socket-io-6848f1c871cd
+links: 
+- gerneral client https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications
+- websockets node: https://github.com/theturtle32/WebSocket-Node
+
+
+ 
+
+hcluster: 
+testing with 25 items and 3-10 clusters
+### 3 Clusters:
+0. first items has id: 18
+1. first items has id: 1
+2. first items has id: 16
+### 4 Clusters:
+0. first items has id: 18
+1. first items has id: 16
+2. first items has id: 1
+3. first items has id: 22
+### 5 Clusters:
+0. first items has id: 18
+1. first items has id: 1
+2. first items has id: 22
+3. first items has id: 16
+4. first items has id: 17
+### 6 Clusters:
+0. first items has id: 18
+1. first items has id: 1
+2. first items has id: 22
+3. first items has id: 16
+4. first items has id: 17
+5. first items has id: 28
+### 7 Clusters:
+0. first items has id: 1
+1. first items has id: 22
+2. first items has id: 16
+3. first items has id: 17
+4. first items has id: 28
+5. first items has id: 18
+6. first items has id: 35
+### 8 Clusters:
+0. first items has id: 1
+1. first items has id: 22
+2. first items has id: 16
+3. first items has id: 17
+4. first items has id: 28
+5. first items has id: 35
+6. first items has id: 18
+7. first items has id: 102
+### 9 Clusters:
+0. first items has id: 22
+1. first items has id: 16
+2. first items has id: 17
+3. first items has id: 28
+4. first items has id: 35
+5. first items has id: 18
+6. first items has id: 102
+7. first items has id: 1
+8. first items has id: 82
+### 10 Clusters:
+0. first items has id: 22
+1. first items has id: 17
+2. first items has id: 28
+3. first items has id: 35
+4. first items has id: 18
+5. first items has id: 102
+6. first items has id: 1
+7. first items has id: 82
+8. first items has id: 16
+9. first items has id: 68
+
+the Idea is that going from a few to many clusters the representing nodes are not changing
+this test let guess that this will works
+not let assume
+
 TODO:
 - alpha überarbeiten
 - - refresh
@@ -261,17 +422,129 @@ Fix: added neighbours does not have correct size
 
 
 22.03.
-
 - refactoring backend code: DRY in dev/prod mode
-- resize images via +/- buttons
-- resize active images via +/- buttons
-- resize images in scrolling (the faktor should be also be getting a +/- value)
+- resize images for bedder UX
+- refactoring backend code: async/await in readfile
+- add imageFile store for bedder performance
+- show details of image in freeze mode
+
+23.03.
+- testing different zooming behaviors 
+- add kdtree on backend
+- add clustering with clusterfck/hcluster
+- add +/- buttons for showing different clusters
+- show active image in sidebar
+
+
+26.03.
+- summarize/write down cluster research
+- change 'clustered' nodes visualisation
+- resize default images width via +/- buttons
+- resize default active images width via +/- buttons
+- resize border color (labels) width
+
+28.03.
+
+
+1.4.
+- add trible canvas
+ - show positives/negativs in left/right areas
+ - remove/add them 
+
+4.4.
+- send kdtree to client
+- add range method in client
+- inform client when all data are send back
+- restyle header
+
+5.4.
+- use all 100k images in prod
+- resizing images automatically - http://sharp.pixelplumbing.com
+- change client for new img size  
+- styling triple
+- add a classify mode for difference UI interaction
+- add add/remove nodes for classification 
+- take options behind a toggle button
+
+6.4. 
+- zoom to mouse position https://stackoverflow.com/questions/2916081/zoom-in-on-a-point-using-scale-and-translate
+- add scaling exponential
+- add second scale parameter for image size scale differently
+- add buttons for both scaling factors adjustment 
+- classifier - choose label from dropdown
+
+12.04.
+- testing 3k images
+    - new 3k dataset 
+- Fix problem with socket reconnect/request new data on connect  
+- optimize logs
+- Problem: 
+    - Client loose connection under heavy server work
+    - Server combine/merges emits and also they are not coming back to the (reconnected) client
+    - scaling problems: https://medium.com/@3rdeden/cluster-fucks-when-scaling-socket-io-2c8ad1153332
+    
+17.04.
+- pre render images server side + test it (Problem is the mass render work in the browser with 3k pics)
+    - Fixed: prerender means making a data-url from a buffer with .toString(base64) 
+- test communications problem
+- maybe write down some stuff? 
+- add scale2 to Ui
+
+
+TODOS:
+- make picture width undependable from image width
+
+- refactor coloring labels with colored rects
+ 
+ 
+Try: 
+- save some user information so the server send message back
+- find a way the send each response without merging/combine them
+- use real WebSockets     
+   
+
+TODO: 
+- rescaling cluster value growth on zoom
+
+Classifier
+- colorpicker 4 labels https://github.com/xiaokaike/vue-color + https://vuejsexamples.com/vue-color-picker/
+
+Perfomance: 
+- reducing the payload size with diffrent parser: https://github.com/socketio/socket.io/tree/master/examples/custom-parsers
+    - this looks nice: https://github.com/phretaddin/schemapack
+- general tips for canvas performance: https://www.html5rocks.com/en/tutorials/canvas/performance/
+- use schemapack for transport data/custom parser https://github.com/phretaddin/schemapack
+
+Ideas: 
+- sending progress events via socket: https://www.twilio.com/blog/2015/10/getting-started-with-socket-io-adding-real-time-events-to-your-node-js-express-app.html
+ 
+
+- cluster showed nodes
+zoom verändern - beim rein zoomen bilder vergrößern UND auseinander ziehen
+alte vs. neue implementierung vergleichen
+2 vorlage/beispiel studieren
+uoomen in jeden bereich ermöglichen
+neue bilder - anstatt icons bilder mit echten weite/höhe?
+haben bilder dieso info irgendwo?  
+app verschönern und clustering 
+
+- add slider for changing values (https://www.w3schools.com/howto/howto_js_rangeslider.asp)
+- check different clustering
+ - radius clustering?
+
+- cluster-zooming 
+ - via zooming 
+ - via rangeslider 
 
 
 - cluster nodes and showing represents
-  - add clustering segments on server
   - add range slider for clustering segments
   
+  
+- resize images in scrolling (the factor should be also be getting a +/- value)
+- toggle show labels with colored buttons 
+BUG: the first sended node (see this with small amount of nodes) is not activatable
+
 
 - animate activation/deactivation
 - reorder pictures shown (which on is up?) maybe with own hitmap - nodes is object now und can easly be used for reordering
@@ -288,6 +561,10 @@ Fix: added neighbours does not have correct size
 
 - add fps measure https://github.com/mrdoob/stats.js/stargazers
 
+- add show label color or not4
+- add color picker for labels/classes
+
+
 Optimize:
 - use requestAnimationFrame https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
 - trottle mousemove = https://github.com/socketio/socket.io/blob/master/examples/whiteboard/public/main.js
@@ -299,6 +576,9 @@ Production:
 - A lof off error handling/try + catchs
 - setting python to production 
 
+Backend: 
+- Front + Back on same repo: https://daveceddia.com/create-react-app-express-backend/
+
 
 Roadmap
 - Bilder mit fixer größe anzeigen
@@ -307,8 +587,8 @@ Roadmap
 - andere Bilder (kanten) hinzufügen/löschen
 -
 Fragen:
-- brauch es einen state?
--
+- where/when to add a extra state manager?
+- what is faster? Adding var as a prop or via function? 
 
 
 TODO:
