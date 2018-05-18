@@ -18,6 +18,11 @@ FDG links
 ## Ideen
 - der FDG kennt verschiedene force methoden - diese könnte man alle analysieren
 
+
+## TODOS: (16.5.) ++
+- PWA bauen
+- Garbage collector implementieren. 
+
 # tsnemap - google arts experiment
 
 ## thirdparty js
