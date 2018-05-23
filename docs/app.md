@@ -54,4 +54,20 @@ laden > berechnen aber nicht ohne dieses vorher zu messen zu können, da
 
 #### on calculating cluster
 Das cluster berechnen dauert auch ewig und sollte zuerst in ein neuen prozess ausgelagert werden wobei die Knoten natürlich eigentlich die Infos haben sollten....
+Update: Auf einem Linux system dauert es nur 15-30sekunden, warum ist das auf windows so viel langsamer?
 
+
+
+
+23. 05.
+Zusammenführen für präsentationszwecken von Newarchetecture 1, newarchtecture 2 und clustering on/off
+
+Vorher wurden einzelene Bilder (50,50) als Base64 strings encoded und im Client daraus ein Img object erstellt was dann "gedrawt" wurde.
+für vorführungszwecke wird dies wieder reimplmentiert - hier wird dabei noch drauf geachtet, dass die werte natürliche Zahlen sind da dies zur Zeit als eines der Hauptuhrsachen für schlechte performance gilt.
+
+In new Architecture 1 wurden dann 10 unterschiedliche scalierte Bilder auf dem Server erstellt und im client zoomstufen eingeführt (anderes scaling!)
+Dadurch erspart man sich bei drawImage die Größe (w,h) mitzugegeben (das Bild muss nicht neu scaliert werden) und auch das scaling des canvas wurde entfehrnt und durch ein mathematisches sclaierren ersetzt. (bitte was, wurde das wirklich heir getan=?)
+
+In new Architecture 2 werden die scalierten Bilder dann als Buffer elemente erzeugt und im Client mit der enuen draw2 methode gezeichnet (ImageData objects!)
+
+Fragen: Base64 galt als "prerenderd" woraus sich ein performance schub erhoffte wurde, soll aber auch 30% größer sein. Was ist hier besser?
