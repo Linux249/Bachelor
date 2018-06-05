@@ -110,3 +110,18 @@ Evtl. lässt sich das Bild noch schneller mit c++ zeichnen
 - guter Einstieg und hat was mit bilder zu tun: https://developers.google.com/web/updates/2018/03/emscripting-a-c-library#grand_finale_encode_the_image
 - Canvas + Webasambly https://stackoverflow.com/questions/42806037/modify-canvas-from-wasm
 - WebAssembly JavaScript API https://developer.mozilla.org/en-US/docs/WebAssembly/Using_the_JavaScript_API
+
+
+
+## Tests
+
+1. Warum ist die canvas.drawImage API so langsam?
+Prework
+- 5k nodes erstellen
+- - random x,y werte
+- - Bild aus einem Base64String converten
+
+test
+- alle Bilder mit canvas.drawImage zeichnen
+- alle Bilder mit eigener Funktion zeichnen
+- verschiedene Menge an bilder testen (10, 1k, 5k, 10k, 100k)
