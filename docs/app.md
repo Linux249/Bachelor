@@ -71,3 +71,8 @@ Dadurch erspart man sich bei drawImage die Größe (w,h) mitzugegeben (das Bild 
 In new Architecture 2 werden die scalierten Bilder dann als Buffer elemente erzeugt und im Client mit der enuen draw2 methode gezeichnet (ImageData objects!)
 
 Fragen: Base64 galt als "prerenderd" woraus sich ein performance schub erhoffte wurde, soll aber auch 30% größer sein. Was ist hier besser?
+
+
+
+### Lesen
+- einfacher langer Webpack guide https://www.sitepoint.com/beginners-guide-webpack-module-bundling/
